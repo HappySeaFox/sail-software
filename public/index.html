@@ -1,13 +1,50 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <link href="bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+    
     <title>SAIL: Image decoding library</title>
   </head>
   <body>
-    <div id="message">
-      Coming soon.
-    </div>
+    <main>
+      <div class="container col-xxl-8">
+        <div class="row align-items-center border rounded-3 shadow-lg px-3 py-3">
+          <div class="col-lg-6">
+            <h3 class="display-7 fw-bold lh-1 mb-3">First of its kind GMO-free image decoding library</h3>
+            <p class="lead">SAIL is an Open Source image decoding library supporting all popular image formats.
+Being one of the fastest among competitors, it provides simple yet powerful C/C++ API for end-users.
+SAIL works on Windows, macOS, and Linux platforms.</p>
+            <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+              <a href="https://github.com/HappySeaFox/sail">
+                <button type="button" class="btn btn-primary btn-lg px-4 me-md-2">GitHub</button>
+              </a>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <img src="demo.jpg" class="d-block mx-lg-auto img-fluid" alt="macOS Screenshot" loading="lazy" width="968" height="584"/>
+          </div>
+        </div>
+    </main>
+    
+    <script type="module">
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-app.js";
+      import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-analytics.js";
+
+      const firebaseConfig = {
+        apiKey: "AIzaSyD83VXqJh6jDoSyKU0iAzV_S0AB_NsPeWU",
+        authDomain: "sail-fe770.firebaseapp.com",
+        projectId: "sail-fe770",
+        storageBucket: "sail-fe770.appspot.com",
+        messagingSenderId: "262768070545",
+        appId: "1:262768070545:web:27a962bd225466b9bc1430",
+        measurementId: "G-GSV5744NTS"
+      };
+      
+      const app = initializeApp(firebaseConfig);
+      const analytics = getAnalytics(app);
+    </script>
   </body>
 </html>
