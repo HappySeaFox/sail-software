@@ -3,18 +3,25 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    
-    <link href="bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+
+    <link href="bootstrap/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+    <script src="bootstrap/bootstrap.min.js" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="highlightjs/default.min.css">
+    <script src="highlightjs/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+
     <link href="sail.css" rel="stylesheet" crossorigin="anonymous">
-    
+
     <title>SAIL - Image decoding library</title>
   </head>
   <body>
     <main>
-      <div class="container col-xxl-8">
-        <div class="row align-items-center border rounded-3 shadow-lg px-3 py-3">
-          <div class="col-lg-6 mb-3">
-            <h3 class="fw-bold lh-1 mb-3">First of its kind GMO-free image decoding library</h3>
+      <div class="container border rounded-3 shadow-lg mt-3">
+        <!-- Intro -->
+        <div class="row">
+          <div class="col-lg-6 px-5 py-5">
+            <h3 class="fw-bold lh-1">First of its kind GMO-free image decoding library</h3>
             <p>SAIL is an Open Source image decoding library supporting all popular image formats.
 Being one of the fastest among competitors, it provides simple yet powerful C/C++ API for end-users.
 SAIL works on Windows, macOS, and Linux platforms.</p>
@@ -22,12 +29,61 @@ SAIL works on Windows, macOS, and Linux platforms.</p>
               <button type="button" class="btn btn-success btn-sm github-colors">GitHub</button>
             </a>
           </div>
-          <div class="col-lg-6">
+          <div class="col-lg-6 p-4">
             <img src="demo.jpg" class="d-block mx-lg-auto img-fluid" alt="macOS Screenshot" loading="lazy" width="968" height="584"/>
           </div>
         </div>
+
+        <!-- Examples -->
+        <div id="code-samples-carousel" class="carousel slide px-3 py-3 mt-3 bg-light" data-bs-pause="false">
+          <h3 class="fw-bold lh-1 mb-3">Examples</h3>
+          <div class="carousel-indicators">
+            <button type="button" data-bs-target="#code-samples-carousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="C"></button>
+            <button type="button" data-bs-target="#code-samples-carousel" data-bs-slide-to="1" aria-label="C++"></button>
+          </div>
+
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <pre><code class="language-cpp">/* C */
+struct sail_image *image;
+
+SAIL_TRY(sail_load_image_from_file(path, &image));
+
+printf("Dimensions: %ux%u, bytes per line: %u, pixel format: %s\n",
+        image->width,
+        image->height,
+        image->bytes_per_line,
+        sail_pixel_format_to_string(image->pixel_format));
+
+sail_destroy_image(image);</code></pre>
+            </div>
+            <div class="carousel-item">
+              <pre><code class="language-cpp">// C++
+sail::image image(path);
+
+if (image.is_valid()) {
+    std::cout << "Dimensions: "
+              << image.width() << 'x' << image.height()
+              << ", bytes per line: "
+              << image.bytes_per_line()
+              << ", pixel format: "
+              << sail::image::pixel_format_to_string(image.pixel_format())
+              << std::endl;
+}</code></pre>
+            </div>
+          </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#code-samples-carousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#code-samples-carousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+      </div>
     </main>
-    
+
     <script type="module">
       import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-app.js";
       import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-analytics.js";
@@ -41,7 +97,7 @@ SAIL works on Windows, macOS, and Linux platforms.</p>
         appId: "1:262768070545:web:27a962bd225466b9bc1430",
         measurementId: "G-GSV5744NTS"
       };
-      
+
       const app = initializeApp(firebaseConfig);
       const analytics = getAnalytics(app);
     </script>
