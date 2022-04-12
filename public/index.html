@@ -4,42 +4,105 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     
-    <link href="bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+    <link href="bootstrap/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+    <script src="bootstrap/bootstrap.min.js" crossorigin="anonymous"></script>
+    
+    <link rel="stylesheet" href="highlightjs/a11y-light.min.css">
+    <script src="highlightjs/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+    
     <link href="sail.css" rel="stylesheet" crossorigin="anonymous">
     
     <title>SAIL - Image decoding library</title>
   </head>
   <body>
     <main>
-      <div class="container col-xxl-8">
-        <div class="row align-items-center border rounded-3 shadow-lg px-3 py-3">
-          <div class="col-lg-6 mb-3">
-            <h3 class="fw-bold lh-1 mb-3">First of its kind GMO-free image decoding library</h3>
+      <div class="container border rounded-3 shadow-lg px-0 mt-3">
+        <!-- Intro -->
+        <div class="row mx-0 p-4 p-md-5">
+          <div class="col-lg-6 p-0">
+            <h3 class="fw-bold lh-1">First of its kind GMO-free image decoding library</h3>
             <p>SAIL is an Open Source image decoding library supporting all popular image formats.
-Being one of the fastest among competitors, it provides simple yet powerful C/C++ API for end-users.
-SAIL works on Windows, macOS, and Linux platforms.</p>
+              Being one of the fastest among competitors, it provides simple yet powerful C/C++ API for end-users.
+            SAIL works on Windows, macOS, and Linux platforms.</p>
             <a href="https://github.com/HappySeaFox/sail">
-              <button type="button" class="btn btn-success btn-sm github-colors">GitHub</button>
+              <button type="button" class="btn btn-success btn-sm github-colors mb-3">GitHub</button>
             </a>
           </div>
-          <div class="col-lg-6">
+          <div class="col-lg-6 p-0">
             <img src="demo.jpg" class="d-block mx-lg-auto img-fluid" alt="macOS Screenshot" loading="lazy" width="968" height="584"/>
           </div>
         </div>
+        
+        <!-- Examples -->
+        <div class="accordion px-4 px-md-5 pb-4 pb-md-5 border-top" id="accordionExamples">
+          <h3 class="fw-bold lh-1 px-0 py-3">Examples</h3>
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingOne">
+              <button class="accordion-button shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                C
+              </button>
+            </h2>
+            <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExamples">
+              <div class="accordion-body">
+                <pre><code class="language-cpp p-0">struct sail_image *image;
+                  
+SAIL_TRY(sail_load_image_from_file(path, &image));
+
+printf("Size: %ux%u, bytes per line: %u, "
+       "pixel format: %s, pixels: %p\n",
+         image->width,
+         image->height,
+         image->bytes_per_line,
+         sail_pixel_format_to_string(image->pixel_format),
+         image->pixels);
+
+sail_destroy_image(image);</code></pre>
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingTwo">
+              <button class="accordion-button collapsed shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                C++
+              </button>
+            </h2>
+            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExamples">
+              <div class="accordion-body">
+                <pre><code class="language-cpp p-0">sail::image image(path);
+                  
+std::cout
+  &lt;&lt; "Size: "
+  &lt;&lt; image.width() &lt;&lt; 'x' &lt;&lt; image.height()
+  &lt;&lt; ", bytes per line: "
+  &lt;&lt; image.bytes_per_line()
+  &lt;&lt; ", pixel format: "
+  &lt;&lt; sail::image::pixel_format_to_string(image.pixel_format())
+  &lt;&lt; ", pixels: "
+  &lt;&lt; image.pixels()
+  &lt;&lt; std::endl;</code></pre>
+              </div>
+            </div>
+          </div>
+          <a href="https://github.com/HappySeaFox/sail/blob/master/EXAMPLES.md">
+            <button type="button" class="btn btn-success btn-sm github-colors my-3">See More</button>
+          </a>
+        </div> <!-- Examples. -->
+      </div>
     </main>
     
     <script type="module">
       import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-app.js";
       import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-analytics.js";
-
+      
       const firebaseConfig = {
         apiKey: "AIzaSyD83VXqJh6jDoSyKU0iAzV_S0AB_NsPeWU",
         authDomain: "sail-fe770.firebaseapp.com",
         projectId: "sail-fe770",
         storageBucket: "sail-fe770.appspot.com",
         messagingSenderId: "262768070545",
-        appId: "1:262768070545:web:27a962bd225466b9bc1430",
-        measurementId: "G-GSV5744NTS"
+      appId: "1:262768070545:web:27a962bd225466b9bc1430",
+      measurementId: "G-GSV5744NTS"
       };
       
       const app = initializeApp(firebaseConfig);
