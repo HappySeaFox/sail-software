@@ -1,4 +1,19 @@
-.github-colors {
+﻿.github-colors {
     background-color: #2ea451;
     border-color: #2ea451;
+}
+
+ul.emoji-checked-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+ul.emoji-checked-list li {
+    padding-left: 1rem;
+    text-indent: -0.7rem;
+}
+
+ul.emoji-checked-list li::before {
+    content: "✅ ";
 }
