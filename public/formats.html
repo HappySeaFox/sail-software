@@ -1,0 +1,824 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="bootstrap/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+    <script src="bootstrap/bootstrap.min.js" crossorigin="anonymous"></script>
+
+    <title>SAIL - Image decoding library</title>
+  </head>
+  <body>
+    <main>
+      <div class="container border rounded-3 shadow-lg px-0 mt-3">
+        <!-- Navigation -->
+        <ul class="nav">
+          <li class="nav-item">
+            <a class="nav-link" href="/">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="Formats" href="/formats.html">Formats</a>
+          </li>
+        </ul>
+
+        <!-- Image Formats -->
+        <div class="accordion mx-0 p-0 px-4 px-md-5 pb-4 pb-md-5" id="accordionFormats">
+          <h3 class="fw-bold lh-1 px-0 py-3">Supported Image Formats</h3>
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingApng">
+              <button class="accordion-button shadow-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseApng" aria-expanded="false" aria-controls="collapseApng">
+                1. APNG
+              </button>
+            </h2>
+            <div id="collapseApng" class="accordion-collapse collapse" aria-labelledby="headingApng" data-bs-parent="#accordionFormats">
+              <div class="accordion-body">
+                <table class="table table-striped table-bordered">
+                  <tr>
+                    <td class="fw-bold">Description</td>
+                    <td><a href="https://wikipedia.org/wiki/APNG">Animated Portable Network Graphics</a></td>
+                  </tr>
+                  <tr>
+                    <td class="fw-bold">Can&nbsp;Load</td>
+                    <td><b>Grayscale:</b> 1-bit, 2-bit, 4-bit, 8-bit, 16-bit.
+                      <b>Indexed:</b> 1-bit, 2-bit, 4-bit, 8-bit.
+                      <b>RGB:</b> 24-bit, 48-bit.
+                      <b>RGBA:</b> 32-bit, 64-bit.
+                      <br/><br/>
+                    <b>Content:</b> Static, Animated, Meta data, ICC profiles.</td>
+                  </tr>
+                  <tr>
+                    <td class="fw-bold">Cannot&nbsp;Load</td>
+                    <td>-</td>
+                  </tr>
+                  <tr>
+                    <td class="fw-bold">Can&nbsp;Save</td>
+                    <td>Unsupported</td>
+                  </tr>
+                  <tr>
+                    <td class="fw-bold">Cannot&nbsp;Save</td>
+                    <td>-</td>
+                  </tr>
+                  <tr>
+                    <td class="fw-bold">Dependencies</td>
+                    <td>libpng+APNG patch</td>
+                  </tr>
+                </table>
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingAvif">
+              <button class="accordion-button shadow-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseAvif" aria-expanded="false" aria-controls="collapseAvif">
+                2. AVIF
+              </button>
+            </h2>
+            <div id="collapseAvif" class="accordion-collapse collapse" aria-labelledby="headingAvif" data-bs-parent="#accordionFormats">
+              <div class="accordion-body">
+                <table class="table table-striped table-bordered">
+                  <tr>
+                    <td class="fw-bold">Description</td>
+                    <td><a href="https://wikipedia.org/wiki/AV1#AV1_Image_File_Format_(AVIF)">AV1 Still Image File Format</a></td>
+                  </tr>
+                  <tr>
+                    <td class="fw-bold">Can&nbsp;Load</td>
+                    <td><b>YUV:</b> 8-bit, 10-bit, 12-bit.
+                      <br/><br/>
+                    <b>Content:</b> Static, Animated, Meta data, ICC profiles.</td>
+                  </tr>
+                  <tr>
+                    <td class="fw-bold">Cannot&nbsp;Load</td>
+                    <td>-</td>
+                  </tr>
+                  <tr>
+                    <td class="fw-bold">Can&nbsp;Save</td>
+                    <td>Unsupported</td>
+                  </tr>
+                  <tr>
+                    <td class="fw-bold">Cannot&nbsp;Save</td>
+                    <td>-</td>
+                  </tr>
+                  <tr>
+                    <td class="fw-bold">Dependencies</td>
+                    <td>libavif</td>
+                  </tr>
+                </table>
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingBmp">
+              <button class="accordion-button shadow-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseBmp" aria-expanded="false" aria-controls="collapseBmp">
+                3. BMP
+              </button>
+            </h2>
+            <div id="collapseBmp" class="accordion-collapse collapse" aria-labelledby="headingBmp" data-bs-parent="#accordionFormats">
+              <div class="accordion-body">
+                <table class="table table-striped table-bordered">
+                  <tr>
+                    <td class="fw-bold">Description</td>
+                    <td><a href="https://wikipedia.org/wiki/BMP_file_format">Bitmap Picture</a></td>
+                  </tr>
+                  <tr>
+                    <td class="fw-bold">Can&nbsp;Load</td>
+                    <td>
+                      <b>Indexed:</b> 1-bit, 4-bit, 8-bit (DIB only).
+                      <b>RGB:</b> 16-bit, 24-bit, 32-bit.
+                      <br/><br/>
+                      <b>Compressions:</b> NONE, RLE4, RLE8.
+                      <br/><br/>
+                      <b>BMP Versions:</b> V1 (DDB), V2, V3, V4, V5.
+                      <br/><br/>
+                      <b>Content:</b> Static, Meta data, ICC profiles.
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="fw-bold">Cannot&nbsp;Load</td>
+                    <td>
+                      <b>Indexed:</b> 8-bit (in DDB images).
+                      <br/><br/>
+                      <b>Compressions:</b> ALPHABITFIELDS, BITFIELDS, CMYK, CMYK-RLE4, CMYK-RLE8, JPEG, PNG.
+                      <br/><br/>
+                      <b>BMP Versions:</b> OS/2.
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="fw-bold">Can&nbsp;Save</td>
+                    <td>Unsupported</td>
+                  </tr>
+                  <tr>
+                    <td class="fw-bold">Cannot&nbsp;Save</td>
+                    <td>-</td>
+                  </tr>
+                  <tr>
+                    <td class="fw-bold">Dependencies</td>
+                    <td>-</td>
+                  </tr>
+                </table>
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingGif">
+              <button class="accordion-button shadow-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseGif" aria-expanded="false" aria-controls="collapseGif">
+                4. GIF
+              </button>
+            </h2>
+            <div id="collapseGif" class="accordion-collapse collapse" aria-labelledby="headingGif" data-bs-parent="#accordionFormats">
+              <div class="accordion-body">
+                <table class="table table-striped table-bordered">
+                  <tr>
+                    <td class="fw-bold">Description</td>
+                    <td><a href="https://wikipedia.org/wiki/GIF">Graphics Interchange Format</a></td>
+                  </tr>
+                  <tr>
+                    <td class="fw-bold">Can&nbsp;Load</td>
+                    <td>
+                      <b>Indexed:</b> 8-bit.
+                      <br/><br/>
+                      <b>Content:</b> Static, Animated, Meta data.
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="fw-bold">Cannot&nbsp;Load</td>
+                    <td>-</td>
+                  </tr>
+                  <tr>
+                    <td class="fw-bold">Can&nbsp;Save</td>
+                    <td>Unsupported</td>
+                  </tr>
+                  <tr>
+                    <td class="fw-bold">Cannot&nbsp;Save</td>
+                    <td>-</td>
+                  </tr>
+                  <tr>
+                    <td class="fw-bold">Dependencies</td>
+                    <td>giflib</td>
+                  </tr>
+                </table>
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingIco">
+              <button class="accordion-button shadow-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseIco" aria-expanded="false" aria-controls="collapseIco">
+                5. ICO and CUR
+              </button>
+            </h2>
+            <div id="collapseIco" class="accordion-collapse collapse" aria-labelledby="headingIco" data-bs-parent="#accordionFormats">
+              <div class="accordion-body">
+                <table class="table table-striped table-bordered">
+                  <tr>
+                    <td class="fw-bold">Description</td>
+                    <td><a href="https://en.wikipedia.org/wiki/ICO_(file_format)">Windows Icon</a></td>
+                  </tr>
+                  <tr>
+                    <td class="fw-bold">Can&nbsp;Load</td>
+                    <td>
+                      <b>Bit depth:</b> Same to BMP.
+                      <br/><br/>
+                      <b>Content:</b> Static, Multi-paged.
+                      <br/><br/>
+                      <b>Special properties:</b> Key: <i>"cur-hotspot-x"</i>. Description: X coordinate of the hotspot.
+                      Possible values: unsigned int.
+                      Key: <i>"cur-hotspot-y"</i>. Description: Y coordinate of the hotspot.
+                      Possible values: unsigned int.
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="fw-bold">Cannot&nbsp;Load</td>
+                    <td>PNG contained images</td>
+                  </tr>
+                  <tr>
+                    <td class="fw-bold">Can&nbsp;Save</td>
+                    <td>Unsupported</td>
+                  </tr>
+                  <tr>
+                    <td class="fw-bold">Cannot&nbsp;Save</td>
+                    <td>-</td>
+                  </tr>
+                  <tr>
+                    <td class="fw-bold">Dependencies</td>
+                    <td>-</td>
+                  </tr>
+                </table>
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingJpeg">
+              <button class="accordion-button shadow-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseJpeg" aria-expanded="false" aria-controls="collapseJpeg">
+                6. JPEG
+              </button>
+            </h2>
+            <div id="collapseJpeg" class="accordion-collapse collapse" aria-labelledby="headingJpeg" data-bs-parent="#accordionFormats">
+              <div class="accordion-body">
+                <table class="table table-striped table-bordered">
+                  <tr>
+                    <td class="fw-bold">Description</td>
+                    <td><a href="https://wikipedia.org/wiki/JPEG">Joint Photographic Experts Group</a></td>
+                  </tr>
+                  <tr>
+                    <td class="fw-bold">Can&nbsp;Load</td>
+                    <td>
+                      <b>Grayscale:</b> 8-bit.
+                      <b>RGB:</b> 565 16-bit<sup><a href="#star-underlying">[1]</a></sup>, 24-bit.
+                      <b>BGR:</b><sup><a href="#star-underlying">[1]</a></sup> 24-bit.
+                      <b>YCbCr:</b> 24-bit.
+                      <b>RGBA:</b><sup><a href="#star-underlying">[1]</a></sup> 32-bit.
+                      <b>BGRA:</b><sup><a href="#star-underlying">[1]</a></sup> 32-bit.
+                      <b>ARGB:</b><sup><a href="#star-underlying">[1]</a></sup> 32-bit.
+                      <b>ABGR:</b><sup><a href="#star-underlying">[1]</a></sup> 32-bit.
+                      <b>CMYK:</b> 32-bit.
+                      <b>YCCK:</b> 32-bit.
+                      <br/><br/>
+                      <b>Content:</b> Static, Meta data, ICC profiles.
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="fw-bold">Cannot&nbsp;Load</td>
+                    <td>-</td>
+                  </tr>
+                  <tr>
+                    <td class="fw-bold">Can&nbsp;Save</td>
+                    <td>
+                      <b>Grayscale:</b> 8-bit.
+                      <b>RGB:</b> 565 16-bit<sup><a href="#star-underlying">[1]</a></sup>, 24-bit.
+                      <b>BGR:</b><sup><a href="#star-underlying">[1]</a></sup> 24-bit.
+                      <b>YCbCr:</b> 24-bit.
+                      <b>RGBA:</b><sup><a href="#star-underlying">[1]</a></sup> 32-bit.
+                      <b>BGRA:</b><sup><a href="#star-underlying">[1]</a></sup> 32-bit.
+                      <b>ARGB:</b><sup><a href="#star-underlying">[1]</a></sup> 32-bit.
+                      <b>ABGR:</b><sup><a href="#star-underlying">[1]</a></sup> 32-bit.
+                      <b>CMYK:</b> 32-bit.
+                      <b>YCCK:</b> 32-bit.
+                      <br/><br/>
+                      <b>Content:</b> Static, Meta data, ICC profiles.
+                      <br/><br/>
+                      <b>Tuning:</b> Key: <i>"jpeg-dct-method"</i>. Description: JPEG DCT method.
+                      Possible values: "slow", "fast", "float".
+                      <br/>Key: <i>"jpeg-optimize-coding"</i>. Description: Compute optimal Huffman tables.
+                      Possible values: true or false.
+                      <br/>Key: <i>"jpeg-smoothing-factor"</i>. Description: Smooth the image.
+                      Possible values: Unsigned int range from 1U to 100U.
+                      <br/>See the libjpeg docs for more.
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="fw-bold">Cannot&nbsp;Save</td>
+                    <td>-</td>
+                  </tr>
+                  <tr>
+                    <td class="fw-bold">Dependencies</td>
+                    <td>libjpeg or libjpeg-turbo</td>
+                  </tr>
+                </table>
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingJpeg2000">
+              <button class="accordion-button shadow-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseJpeg2000" aria-expanded="false" aria-controls="collapseJpeg2000">
+                7. JPEG2000
+              </button>
+            </h2>
+            <div id="collapseJpeg2000" class="accordion-collapse collapse" aria-labelledby="headingJpeg2000" data-bs-parent="#accordionFormats">
+              <div class="accordion-body">
+                <table class="table table-striped table-bordered">
+                  <tr>
+                    <td class="fw-bold">Description</td>
+                    <td><a href="https://wikipedia.org/wiki/JPEG_2000">JPEG 2000</a></td>
+                  </tr>
+                  <tr>
+                    <td class="fw-bold">Can&nbsp;Load</td>
+                    <td>
+                      <b>Grayscale:</b> 8-bit, 16-bit.
+                      <b>RGB:</b> 24-bit, 48-bit.
+                      <b>YCbCr:</b> 24-bit.
+                      <b>RGBA:</b> 32-bit, 64-bit.
+                      <br/><br/>
+                      <b>Content:</b> Static.
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="fw-bold">Cannot&nbsp;Load</td>
+                    <td>
+                      <b>Pixel formats:</b> YCCK, CMYK, LAB, XYZ, and other.
+                      <br/><br/>
+                      <b>Content:</b> Meta data, ICC profiles, images with non-zero position, images with bits per channel greater than 16.
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="fw-bold">Can&nbsp;Save</td>
+                    <td>Unsupported</td>
+                  </tr>
+                  <tr>
+                    <td class="fw-bold">Cannot&nbsp;Save</td>
+                    <td>-</td>
+                  </tr>
+                  <tr>
+                    <td class="fw-bold">Dependencies</td>
+                    <td>jasper</td>
+                  </tr>
+                </table>
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingPcx">
+              <button class="accordion-button shadow-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapsePcx" aria-expanded="false" aria-controls="collapsePcx">
+                8. PCX
+              </button>
+            </h2>
+            <div id="collapsePcx" class="accordion-collapse collapse" aria-labelledby="headingPcx" data-bs-parent="#accordionFormats">
+              <div class="accordion-body">
+                <table class="table table-striped table-bordered">
+                  <tr>
+                    <td class="fw-bold">Description</td>
+                    <td><a href="https://wikipedia.org/wiki/PCX">Picture Exchange</a></td>
+                  </tr>
+                  <tr>
+                    <td class="fw-bold">Can&nbsp;Load</td>
+                    <td>
+                      <b>Indexed:</b> 1-bit, 4-bit, 8-bit.
+                      <b>RGB:</b> 24-bit.
+                      <b>RGBA:</b> 32-bit.
+                      <br/><br/>
+                      <b>Content:</b> Static.
+                      <br/><br/>
+                      <b>Compressions:</b> NONE<sup><a href="#star-pcx-rle">[2]</a></sup>, RLE.
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="fw-bold">Cannot&nbsp;Load</td>
+                    <td>-</td>
+                  </tr>
+                  <tr>
+                    <td class="fw-bold">Can&nbsp;Save</td>
+                    <td>Unsupported</td>
+                  </tr>
+                  <tr>
+                    <td class="fw-bold">Cannot&nbsp;Save</td>
+                    <td>-</td>
+                  </tr>
+                  <tr>
+                    <td class="fw-bold">Dependencies</td>
+                    <td>-</td>
+                  </tr>
+                </table>
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingPng">
+              <button class="accordion-button shadow-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapsePng" aria-expanded="false" aria-controls="collapsePng">
+                9. PNG
+              </button>
+            </h2>
+            <div id="collapsePng" class="accordion-collapse collapse" aria-labelledby="headingPng" data-bs-parent="#accordionFormats">
+              <div class="accordion-body">
+                <table class="table table-striped table-bordered">
+                  <tr>
+                    <td class="fw-bold">Description</td>
+                    <td><a href="https://wikipedia.org/wiki/Portable_Network_Graphics">Portable Network Graphics</a></td>
+                  </tr>
+                  <tr>
+                    <td class="fw-bold">Can&nbsp;Load</td>
+                    <td>
+                      <b>Grayscale:</b> 1-bit, 2-bit, 4-bit, 8-bit, 16-bit.
+                      <b>Indexed:</b> 1-bit, 2-bit, 4-bit, 8-bit.
+                      <b>RGB:</b> 24-bit, 48-bit.
+                      <b>RGBA:</b> 32-bit, 64-bit.
+                      <br/><br/>
+                      <b>Content:</b> Static, Meta data, ICC profiles.
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="fw-bold">Cannot&nbsp;Load</td>
+                    <td>-</td>
+                  </tr>
+                  <tr>
+                    <td class="fw-bold">Can&nbsp;Save</td>
+                    <td>
+                      <b>Grayscale:</b> 1-bit, 2-bit, 4-bit, 8-bit, 16-bit.
+                      <b>Indexed:</b> 1-bit, 2-bit, 4-bit, 8-bit.
+                      <b>RGB:</b> 24-bit, 48-bit.
+                      <b>RGBA:</b> 32-bit, 64-bit.
+                      <br/><br/>
+                      <b>Content:</b> Static, Meta data, ICC profiles.
+                      <br/><br/>
+                      <b>Tuning:</b> Key: <i>"png-filter"</i>. Description: PNG filters to apply.
+                      Possible values: "none", "sub", "up", "avg", "paeth".
+                      It's also possible to combine filters with ';' like that: "none;sub;paeth".
+                      <br/>See the libpng docs for more.
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="fw-bold">Cannot&nbsp;Save</td>
+                    <td>-</td>
+                  </tr>
+                  <tr>
+                    <td class="fw-bold">Dependencies</td>
+                    <td>libpng</td>
+                  </tr>
+                </table>
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingQoi">
+              <button class="accordion-button shadow-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseQoi" aria-expanded="false" aria-controls="collapseQoi">
+                10. QOI
+              </button>
+            </h2>
+            <div id="collapseQoi" class="accordion-collapse collapse" aria-labelledby="headingQoi" data-bs-parent="#accordionFormats">
+              <div class="accordion-body">
+                <table class="table table-striped table-bordered">
+                  <tr>
+                    <td class="fw-bold">Description</td>
+                    <td><a href="http://qoiformat.org">Quite OK Image</a></td>
+                  </tr>
+                  <tr>
+                    <td class="fw-bold">Can&nbsp;Load</td>
+                    <td>
+                      <b>RGB:</b> 24-bit.
+                      <b>RGBA:</b> 32-bit.
+                      <br/><br/>
+                      <b>Content:</b> Static.
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="fw-bold">Cannot&nbsp;Load</td>
+                    <td>Linear color space.</td>
+                  </tr>
+                  <tr>
+                    <td class="fw-bold">Can&nbsp;Save</td>
+                    <td>
+                      <b>RGB:</b> 24-bit.
+                      <b>RGBA:</b> 32-bit.
+                      <br/><br/>
+                      <b>Content:</b> Static.
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="fw-bold">Cannot&nbsp;Save</td>
+                    <td>Linear color space.</td>
+                  </tr>
+                  <tr>
+                    <td class="fw-bold">Dependencies</td>
+                    <td>-</td>
+                  </tr>
+                </table>
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingSvg">
+              <button class="accordion-button shadow-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSvg" aria-expanded="false" aria-controls="collapseSvg">
+                11. SVG
+              </button>
+            </h2>
+            <div id="collapseSvg" class="accordion-collapse collapse" aria-labelledby="headingSvg" data-bs-parent="#accordionFormats">
+              <div class="accordion-body">
+                <table class="table table-striped table-bordered">
+                  <tr>
+                    <td class="fw-bold">Description</td>
+                    <td><a href="https://wikipedia.org/wiki/Scalable_Vector_Graphics">Scalable Vector Graphics</a></td>
+                  </tr>
+                  <tr>
+                    <td class="fw-bold">Can&nbsp;Load</td>
+                    <td>
+                      <b>Bit depth:</b> 32-bit.
+                      <br/><br/>
+                      <b>Content:</b> Static.
+                      <br/><br/>
+                      See <a href="https://razrfalcon.github.io/resvg-test-suite/svg-support-table.html">more</a>.
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="fw-bold">Cannot&nbsp;Load</td>
+                    <td>
+                      <b>Content:</b> Animated, Meta data, ICC profiles.
+                      <br/><br/>
+                      See <a href="https://razrfalcon.github.io/resvg-test-suite/svg-support-table.html">more</a>.
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="fw-bold">Can&nbsp;Save</td>
+                    <td>Unsupported</td>
+                  </tr>
+                  <tr>
+                    <td class="fw-bold">Cannot&nbsp;Save</td>
+                    <td>-</td>
+                  </tr>
+                  <tr>
+                    <td class="fw-bold">Dependencies</td>
+                    <td>resvg</td>
+                  </tr>
+                </table>
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingTga">
+              <button class="accordion-button shadow-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTga" aria-expanded="false" aria-controls="collapseTga">
+                12. TGA
+              </button>
+            </h2>
+            <div id="collapseTga" class="accordion-collapse collapse" aria-labelledby="headingTga" data-bs-parent="#accordionFormats">
+              <div class="accordion-body">
+                <table class="table table-striped table-bordered">
+                  <tr>
+                    <td class="fw-bold">Description</td>
+                    <td><a href="https://wikipedia.org/wiki/Truevision_TGA">Truevision TGA</a></td>
+                  </tr>
+                  <tr>
+                    <td class="fw-bold">Can&nbsp;Load</td>
+                    <td>
+                      <b>Grayscale:</b> 8-bit.
+                      <b>Indexed:</b> 8-bit.
+                      <b>RGB:</b> 24-bit.
+                      <b>RGBA:</b> 32-bit.
+                      <br/><br/>
+                      <b>Content:</b> Static, Meta data.
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="fw-bold">Cannot&nbsp;Load</td>
+                    <td><b>Content:</b> Thumbnail images.</td>
+                  </tr>
+                  <tr>
+                    <td class="fw-bold">Can&nbsp;Save</td>
+                    <td>Unsupported</td>
+                  </tr>
+                  <tr>
+                    <td class="fw-bold">Cannot&nbsp;Save</td>
+                    <td>-</td>
+                  </tr>
+                  <tr>
+                    <td class="fw-bold">Dependencies</td>
+                    <td>-</td>
+                  </tr>
+                </table>
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingTiff">
+              <button class="accordion-button shadow-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTiff" aria-expanded="false" aria-controls="collapseTiff">
+                13. TIFF
+              </button>
+            </h2>
+            <div id="collapseTiff" class="accordion-collapse collapse" aria-labelledby="headingTiff" data-bs-parent="#accordionFormats">
+              <div class="accordion-body">
+                <table class="table table-striped table-bordered">
+                  <tr>
+                    <td class="fw-bold">Description</td>
+                    <td><a href="https://wikipedia.org/wiki/TIFF">Tagged Image File Format</a></td>
+                  </tr>
+                  <tr>
+                    <td class="fw-bold">Can&nbsp;Load</td>
+                    <td>
+                      <b>Bit depth:</b> 1-bit, 2-bit, 4-bit, 8-bit, 16-bit, 24-bit, 32-bit, 48-bit, 64-bit.
+                      <br/><br/>
+                      <b>Compressions:</b><sup><a href="#star-underlying">[1]</a></sup> ADOBE-DEFLATE, CCITT-RLE, CCITT-RLEW, CCITT-T4, CCITT-T6, DCS, DEFLATE, IT-8BL, IT8-CTPAD, IT8-LW, IT8-MP, JBIG, JPEG, JPEG-2000, LERC, LZMA, LZW, NEXT, NONE, OJPEG, PACKBITS, PIXAR-FILM, PIXAR-LOG, SGI-LOG24, SGI-LOG, T43, T85, THUNDERSCAN, WEBP, ZSTD.
+                      <br/><br/>
+                      <b>Content:</b> Static, Multi-paged, Meta data, ICC profiles.
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="fw-bold">Cannot&nbsp;Load</td>
+                    <td>-</td>
+                  </tr>
+                  <tr>
+                    <td class="fw-bold">Can&nbsp;Save</td>
+                    <td>
+                      <b>RGBA:</b> 32-bit.
+                      <br/><br/>
+                      <b>Compressions:</b><sup><a href="#star-underlying">[1]</a></sup> ADOBE-DEFLATE, CCITT-RLE, CCITT-RLEW, CCITT-T4, CCITT-T6, DCS, DEFLATE, IT-8BL, IT8-CTPAD, IT8-LW, IT8-MP, JBIG, JPEG, JPEG-2000, LERC, LZMA, LZW, NEXT, NONE, OJPEG, PACKBITS, PIXAR-FILM, PIXAR-LOG, SGI-LOG24, SGI-LOG, T43, T85, THUNDERSCAN, WEBP, ZSTD.
+                      <br/><br/>
+                      <b>Content:</b> Static, Multi-paged, Meta data, ICC profiles.
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="fw-bold">Cannot&nbsp;Save</td>
+                    <td>-</td>
+                  </tr>
+                  <tr>
+                    <td class="fw-bold">Dependencies</td>
+                    <td>libtiff</td>
+                  </tr>
+                </table>
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingWal">
+              <button class="accordion-button shadow-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseWal" aria-expanded="false" aria-controls="collapseWal">
+                14. WAL
+              </button>
+            </h2>
+            <div id="collapseWal" class="accordion-collapse collapse" aria-labelledby="headingWal" data-bs-parent="#accordionFormats">
+              <div class="accordion-body">
+                <table class="table table-striped table-bordered">
+                  <tr>
+                    <td class="fw-bold">Description</td>
+                    <td><a href="http://fileformats.archiveteam.org/wiki/Quake_2_Texture">Quake2 Texture</a></td>
+                  </tr>
+                  <tr>
+                    <td class="fw-bold">Can&nbsp;Load</td>
+                    <td>
+                      <b>Indexed:</b> 8-bit.
+                      <br/><br/>
+                      <b>Content:</b> Static, Multi-paged.
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="fw-bold">Cannot&nbsp;Load</td>
+                    <td>-</td>
+                  </tr>
+                  <tr>
+                    <td class="fw-bold">Can&nbsp;Save</td>
+                    <td>Unsupported</td>
+                  </tr>
+                  <tr>
+                    <td class="fw-bold">Cannot&nbsp;Save</td>
+                    <td>-</td>
+                  </tr>
+                  <tr>
+                    <td class="fw-bold">Dependencies</td>
+                    <td>-</td>
+                  </tr>
+                </table>
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingWebp">
+              <button class="accordion-button shadow-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseWebp" aria-expanded="false" aria-controls="collapseWebp">
+                15. WEBP
+              </button>
+            </h2>
+            <div id="collapseWebp" class="accordion-collapse collapse" aria-labelledby="headingWebp" data-bs-parent="#accordionFormats">
+              <div class="accordion-body">
+                <table class="table table-striped table-bordered">
+                  <tr>
+                    <td class="fw-bold">Description</td>
+                    <td><a href="https://wikipedia.org/wiki/WebP">Web Picture</a></td>
+                  </tr>
+                  <tr>
+                    <td class="fw-bold">Can&nbsp;Load</td>
+                    <td>
+                      <b>Bit depth:</b> 24-bit, 32-bit.
+                      <br/><br/>
+                      <b>Content:</b> Static, Animated, Meta data, ICC profiles.
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="fw-bold">Cannot&nbsp;Load</td>
+                    <td>-</td>
+                  </tr>
+                  <tr>
+                    <td class="fw-bold">Can&nbsp;Save</td>
+                    <td>Unsupported</td>
+                  </tr>
+                  <tr>
+                    <td class="fw-bold">Cannot&nbsp;Save</td>
+                    <td>-</td>
+                  </tr>
+                  <tr>
+                    <td class="fw-bold">Dependencies</td>
+                    <td>libwebp</td>
+                  </tr>
+                </table>
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingXbm">
+              <button class="accordion-button shadow-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseXbm" aria-expanded="false" aria-controls="collapseXbm">
+                16. XBM
+              </button>
+            </h2>
+            <div id="collapseXbm" class="accordion-collapse collapse" aria-labelledby="headingXbm" data-bs-parent="#accordionFormats">
+              <div class="accordion-body">
+                <table class="table table-striped table-bordered">
+                  <tr>
+                    <td class="fw-bold">Description</td>
+                    <td><a href="https://en.wikipedia.org/wiki/X_BitMap">X BitMap</a></td>
+                  </tr>
+                  <tr>
+                    <td class="fw-bold">Can&nbsp;Load</td>
+                    <td>
+                      <b>Bit depth:</b> 1-bit.
+                      <br/><br/>
+                      <b>Content:</b> Static.
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="fw-bold">Cannot&nbsp;Load</td>
+                    <td>
+                      <b>Content:</b> Multi-paged, C-style /*...*/ comments.
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="fw-bold">Can&nbsp;Save</td>
+                    <td>Unsupported</td>
+                  </tr>
+                  <tr>
+                    <td class="fw-bold">Cannot&nbsp;Save</td>
+                    <td>-</td>
+                  </tr>
+                  <tr>
+                    <td class="fw-bold">Dependencies</td>
+                    <td>-</td>
+                  </tr>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="px-4 px-md-5 pb-4 pb-md-5 border-top">
+          <h3 class="fw-bold lh-1 px-0 py-3">References</h3>
+          <ul>
+            <li><a name="star-underlying"></a>[1] If supported by the underlying codec like libjpeg.</li>
+            <li><a name="star-pcx-rle"></a>[2] Even though uncompressed PCX files are not considered valid by the spec.</li>
+          </ul>
+        </div>
+      </div>
+    </main>
+
+    <script type="module">
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-app.js";
+      import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-analytics.js";
+
+      const firebaseConfig = {
+      apiKey: "AIzaSyD83VXqJh6jDoSyKU0iAzV_S0AB_NsPeWU",
+      authDomain: "sail-fe770.firebaseapp.com",
+      projectId: "sail-fe770",
+      storageBucket: "sail-fe770.appspot.com",
+      messagingSenderId: "262768070545",
+      appId: "1:262768070545:web:27a962bd225466b9bc1430",
+      measurementId: "G-GSV5744NTS"
+      };
+
+      const app = initializeApp(firebaseConfig);
+      const analytics = getAnalytics(app);
+    </script>
+  </body>
+</html>

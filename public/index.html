@@ -3,23 +3,33 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    
+
     <link href="bootstrap/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
     <script src="bootstrap/bootstrap.min.js" crossorigin="anonymous"></script>
-    
+
     <link rel="stylesheet" href="highlightjs/a11y-light.min.css">
     <script src="highlightjs/highlight.min.js"></script>
     <script>hljs.highlightAll();</script>
-    
+
     <link href="sail.css" rel="stylesheet" crossorigin="anonymous">
-    
+
     <title>SAIL - Image decoding library</title>
   </head>
   <body>
     <main>
       <div class="container border rounded-3 shadow-lg px-0 mt-3">
+        <!-- Navigation -->
+        <ul class="nav">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="Home" href="/">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/formats.html">Formats</a>
+          </li>
+        </ul>
+
         <!-- Intro -->
-        <div class="row mx-0 p-4 p-md-5">
+        <div class="row mx-0 p-0 px-4 px-md-5 pt-2 pt-md-3 pb-4 pb-md-5">
           <div class="col-lg-6 p-0">
             <h3 class="fw-bold lh-1">First of its kind GMO-free image decoding library</h3>
             <p>SAIL is an Open Source image decoding library supporting all popular image formats.
@@ -39,23 +49,24 @@
             <img src="demo.jpg" class="d-block mx-lg-auto img-fluid" alt="macOS Screenshot" loading="lazy" width="968" height="584"/>
           </div>
         </div>
-        
+
         <!-- Features Overview -->
         <div class="px-4 px-md-5 pb-4 pb-md-5 border-top">
           <h3 class="fw-bold lh-1 px-0 py-3">Features Overview</h3>
           <ul class="emoji-checked-list">
             <li>Support of all popular image formats including
-                <a href="https://wikipedia.org/wiki/JPEG">JPEG</a>,
-                <a href="https://wikipedia.org/wiki/Portable_Network_Graphics">PNG</a>,
-                <a href="https://wikipedia.org/wiki/TIFF">TIFF</a>,
-                <a href="https://wikipedia.org/wiki/GIF">GIF</a>,
-                <a href="https://wikipedia.org/wiki/AV1#AV1_Image_File_Format_(AVIF)">AVIF</a>,
-                and <a href="https://wikipedia.org/wiki/WebP">WEBP</a>.</li>
+              <a href="https://wikipedia.org/wiki/JPEG">JPEG</a>,
+              <a href="https://wikipedia.org/wiki/Portable_Network_Graphics">PNG</a>,
+              <a href="https://wikipedia.org/wiki/TIFF">TIFF</a>,
+              <a href="https://wikipedia.org/wiki/GIF">GIF</a>,
+              <a href="https://wikipedia.org/wiki/AV1#AV1_Image_File_Format_(AVIF)">AVIF</a>,
+              and
+              <a href="https://wikipedia.org/wiki/WebP">WEBP</a>.</li>
             <li>Thread-safe implementation. SAIL is known to be successfully used in multi-threaded servers.</li>
             <li>Pluggable architecture. Codecs are implemented as dynamically loaded plugins. User can compile all codecs into a combined library.</li>
             <li>Load from everywhere. Files, memory, and custom I/O sources are supported.</li>
             <li>Codec-specific tuning options like <a href="https://en.wikipedia.org/wiki/Portable_Network_Graphics#Filtering" rel="nofollow">PNG filters</a>.
-                See <a href="https://github.com/HappySeaFox/sail/blob/master/FORMATS.md">FORMATS</a>.</li>
+                See <a href="/formats.html">formats</a>.</li>
             <li>Step-by-step loading of multi-paged or animated images.</li>
             <li>Meta data support: text comments, EXIF, ICC profiles.</li>
             <li>Probing or access to the image properties without decoding pixels.</li>
@@ -76,16 +87,16 @@
             <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExamples">
               <div class="accordion-body">
                 <pre><code class="language-cpp p-0">struct sail_image *image;
-                  
+
 SAIL_TRY(sail_load_image_from_file(path, &image));
 
 printf("Size: %ux%u, bytes per line: %u, "
        "pixel format: %s, pixels: %p\n",
-         image->width,
-         image->height,
-         image->bytes_per_line,
-         sail_pixel_format_to_string(image->pixel_format),
-         image->pixels);
+       image->width,
+       image->height,
+       image->bytes_per_line,
+       sail_pixel_format_to_string(image->pixel_format),
+       image->pixels);
 
 sail_destroy_image(image);</code></pre>
               </div>
@@ -100,7 +111,7 @@ sail_destroy_image(image);</code></pre>
             <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExamples">
               <div class="accordion-body">
                 <pre><code class="language-cpp p-0">sail::image image(path);
-                  
+
 std::cout
   &lt;&lt; "Size: "
   &lt;&lt; image.width() &lt;&lt; 'x' &lt;&lt; image.height()
