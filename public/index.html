@@ -132,23 +132,115 @@ std::cout
             <button type="button" class="btn btn-success btn-sm github-colors my-3">See More</button>
           </a>
         </div>
+
+        <!-- Installation -->
+        <div class="accordion px-4 px-md-5 pb-4 pb-md-5 border-top" id="accordionInstallation">
+          <h3 class="fw-bold lh-1 px-0 py-3">Installation</h3>
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingWindows">
+              <button class="accordion-button shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#collapseWindows" aria-expanded="true" aria-controls="collapseWindows">
+                Windows
+              </button>
+            </h2>
+            <div id="collapseWindows" class="accordion-collapse collapse show" aria-labelledby="headingWindows" data-bs-parent="#accordionInstallation">
+              <div class="accordion-body">
+                <ul>
+                  <li>VCPKG
+                    <p><pre><code class="language-bash p-0">vcpkg install sail</code></pre></p>
+                  </li>
+                  <li>Pre-built with MSVC Community
+                    <p class="mb-0">
+                      <a href="https://github.com/HappySeaFox/sail/releases">
+                        <button type="button" class="btn btn-success btn-sm github-colors my-3">Download</button>
+                      </a>
+                    </p>
+                  </li>
+                  <li>Building from source
+                    <p class="mb-0">
+                      <a href="https://github.com/HappySeaFox/sail/blob/master/BUILDING.md">
+                        <button type="button" class="btn btn-success btn-sm github-colors my-3">See More</button>
+                      </a>
+                    </p>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingMacOS">
+              <button class="accordion-button collapsed shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#collapseMacOS" aria-expanded="false" aria-controls="collapseMacOS">
+                macOS
+              </button>
+            </h2>
+            <div id="collapseMacOS" class="accordion-collapse collapse" aria-labelledby="headingMacOS" data-bs-parent="#accordionInstallation">
+              <div class="accordion-body">
+                <ul>
+                  <li>VCPKG
+                    <p><pre><code class="language-bash p-0">vcpkg install sail</code></pre></p>
+                  </li>
+                  <li>HomeBrew. SAIL is currently available in a third-party repository only.
+                    <p><pre><code class="language-bash p-0">brew install HapySeaFox/sail/sail</code></pre></p>
+                  </li>
+                  <li>Building from source
+                    <p class="mb-0">
+                      <a href="https://github.com/HappySeaFox/sail/blob/master/BUILDING.md">
+                        <button type="button" class="btn btn-success btn-sm github-colors my-3">See More</button>
+                      </a>
+                    </p>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingLinux">
+              <button class="accordion-button collapsed shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#collapseLinux" aria-expanded="false" aria-controls="collapseLinux">
+                Linux
+              </button>
+            </h2>
+            <div id="collapseLinux" class="accordion-collapse collapse" aria-labelledby="headingLinux" data-bs-parent="#accordionInstallation">
+              <div class="accordion-body">
+                <ul>
+                  <li>VCPKG
+                    <p><pre><code class="language-bash p-0">vcpkg install sail</code></pre></p>
+                  </li>
+                  <li>Building from source
+                    <p class="mb-0">
+                      <a href="https://github.com/HappySeaFox/sail/blob/master/BUILDING.md">
+                        <button type="button" class="btn btn-success btn-sm github-colors my-3">See More</button>
+                      </a>
+                    </p>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Copyright -->
+        <div class="px-4 px-md-5 pb-4 pb-md-5 border-top">
+          <div class="col-lg-6 p-0">
+            <h3 class="fw-bold lh-1 px-0 py-3">Copyright &amp; License</h3>
+            <p>Copyright (C) Dmitry Baryshev (legal: Dzmitry Baryshau). License: <a href="https://github.com/HappySeaFox/sail/blob/master/LICENSE.txt">MIT</a>.</p>
+          </div>
+        </div>
       </div>
     </main>
-    
+
     <script type="module">
       import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-app.js";
       import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-analytics.js";
-      
+
       const firebaseConfig = {
         apiKey: "AIzaSyD83VXqJh6jDoSyKU0iAzV_S0AB_NsPeWU",
         authDomain: "sail-fe770.firebaseapp.com",
         projectId: "sail-fe770",
         storageBucket: "sail-fe770.appspot.com",
         messagingSenderId: "262768070545",
-      appId: "1:262768070545:web:27a962bd225466b9bc1430",
-      measurementId: "G-GSV5744NTS"
+        appId: "1:262768070545:web:27a962bd225466b9bc1430",
+        measurementId: "G-GSV5744NTS"
       };
-      
+
       const app = initializeApp(firebaseConfig);
       const analytics = getAnalytics(app);
     </script>
