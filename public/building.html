@@ -1,0 +1,132 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="bootstrap/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+    <script src="bootstrap/bootstrap.min.js" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="highlightjs/a11y-light.min.css">
+    <script src="highlightjs/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+
+    <title>SAIL - Image decoding library</title>
+  </head>
+  <body>
+    <main>
+      <div class="container border rounded-3 shadow-lg px-0 mt-3">
+        <!-- Navigation -->
+        <ul class="nav">
+          <li class="nav-item">
+            <a class="nav-link" href="/">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/formats.html">Formats</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/benchmarks.html">Benchmarks</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="Building" href="/building.html">Building</a>
+          </li>
+        </ul>
+
+        <div class="px-4 px-md-5 pb-3 pb-md-4">
+          <h3 class="fw-bold px-0 py-3">Building SAIL</h3>
+          This page covers building SAIL from source. Prefer using package managers to install SAIL,
+          see <a href="/index.html#installation">installation</a>.
+        </div>
+
+        <div class="px-4 px-md-5 pb-3 pb-md-4 border-top">
+          <h5 class="fw-bold px-0 py-3">Terminology and build types</h5>
+          <ul>
+            <li><span class="fw-bold">Standalone build</span> - manually compiled with <code>cmake</code>
+                and respective build commands. Extra dependencies like libjpeg ARE NOT shipped with the build.
+                macOS brew package is a good example of a standalone build.</li>
+            <li><span class="fw-bold">Standalone bundle</span> - manually compiled with <code>cmake</code>
+                 and respective build commands. Extra dependencies like libjpeg ARE shipped with the build.
+                 Portable archive for Windows on the releases page on GitHub is a good example of a standalone bundle.</li>
+            <li><span class="fw-bold">VCPKG port</span> - installed with <code>vcpkg install sail</code>.</li>
+          </ul>
+
+          <h5 class="fw-bold">CMake options overview</h5>
+          <ul>
+            <li><code>SAIL_BUILD_EXAMPLES=ON|OFF</code> - Build examples. Default: <code>ON</code>.</li>
+            <li><code>SAIL_BUILD_TESTS=ON|OFF</code> - Build tests. Default: <code>ON</code>.</li>
+            <li><code>SAIL_COLORED_OUTPUT=ON|OFF</code> - Enable colored console output on Windows >= 10 and Unix platforms.
+                Default: <code>ON</code>.</li>
+            <li><code>SAIL_COMBINE_CODECS=ON|OFF</code> - Combine all codecs into a single library. Static build always
+                sets this option to <code>ON</code>. Default: <code>OFF</code>.</li>
+            <li><code>SAIL_DEV=ON|OFF</code> - Enable developer mode with pedantic warnings and possible ASAN enabled
+                 for examples. Default: <code>OFF</code>.</li>
+            <li><code>SAIL_EXCEPT_CODECS="a;b;c"</code> - Enable all codecs except the codecs specified in this ';'-separated list.
+                Codecs with missing dependencies will be disabled regardless this setting. Default: empty list.</li>
+            <li><code>SAIL_THIRD_PARTY_CODECS_PATH=ON|OFF</code> - Enable loading custom codecs from the ';'-separated paths
+                specified in the SAIL_THIRD_PARTY_CODECS_PATH environment variable. Default: <code>ON</code>.</li>
+            <li><code>SAIL_THREAD_SAFE=ON|OFF</code> - Enable working in multi-threaded environments by locking the internal
+                context with a mutex. Default: <code>ON</code>.</li>
+            <li><code>SAIL_ONLY_CODECS="a;b;c"</code> - Enable only the codecs specified in this ';'-separated list.
+                Codecs with missing dependencies will be disabled regardless this setting. Default: empty list.</li>
+          </ul>
+        </div>
+
+        <div class="px-4 px-md-5 pb-3 pb-md-4 border-top">
+          <h5 class="fw-bold px-0 py-3">Windows (standalone build)</h5>
+          <h6 class="fw-bold">Build requirements</h6>
+          <ul>
+            <li>Git</li>
+            <li>CMake 3.10 or later</li>
+            <li>MSVC 2019 or later</li>
+          </ul>
+          <h6 class="fw-bold">Build steps</h6>
+          Open <code>Git Bash</code> (installed along with <code>git</code>) and execute the following commands:
+          <pre><code class="language-bash">git clone --recursive https://github.com/HappySeaFox/sail.git
+cd sail
+
+# Compile third-party dependencies
+cd extra
+./build
+cd ..
+
+# Compile SAIL
+mkdir build
+cd build
+cmake -A x64 -DCMAKE_INSTALL_PREFIX="C:\SAIL" ..
+cmake --build . --config Release
+
+# Install
+cmake --build . --config Release --target install</code></pre>
+        </div>
+
+        <div class="px-4 px-md-5 pb-3 pb-md-4 border-top">
+          <h5 class="fw-bold px-0 py-3">Linux (standalone build)</h5>
+          <h6 class="fw-bold">Build requirements</h6>
+          <ul>
+            <li>Git</li>
+            <li>CMake 3.10 or later</li>
+            <li>GCC and G++ 7.5 or later</li>
+            <li>Standard C/C++ development files installed (usually installed by metapackages like <code>build-essential</code>)</li>
+            <li>Codec-specific development libraries installed. You can grab the list from <code>debian/control</code></li>
+          </ul>
+          <h6 class="fw-bold">Build steps</h6>
+          <pre><code class="language-bash">git clone --recursive https://github.com/HappySeaFox/sail.git
+cd sail
+
+# Install the required dependencies grabbed from debian/control
+sudo apt install ...
+
+# Compile SAIL
+mkdir build
+cd build
+cmake -DCMAKE_BUILD_TYPE=Release ..
+make
+
+# Install
+... distro-specific installation</code></pre>
+        </div>
+      </div>
+    </main>
+    <script type="module" src="analytics.js"></script>
+  </body>
+</html>
