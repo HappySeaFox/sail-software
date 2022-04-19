@@ -19,6 +19,9 @@
         <li class="nav-item">
           <a class="nav-link" href="/building.html">Building</a>
         </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/faq.html">FAQ</a>
+        </li>
       </ul>
     </div>
   </div>
