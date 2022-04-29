@@ -68,9 +68,9 @@
         <div>
           <h5 class="fw-bold">What's the preferred way of installation?</h5>
           <ul>
-            <li>Windows: <code>vcpkg</code></li>
-            <li>macOS: <code>brew</code>, <code>vcpkg</code></li>
-            <li>Linux: native packages if available, <code>vcpkg</code></li>
+            <li>Windows: <code>conan</code>, <code>vcpkg</code></li>
+            <li>macOS: <code>conan</code>, <code>brew</code>, <code>vcpkg</code></li>
+            <li>Linux: native packages if available, <code>conan</code>, <code>vcpkg</code></li>
           </ul>
           <p>See <a href="/building.html">Building</a>.</p>
         </div>
@@ -182,6 +182,8 @@
         <div>
           <h5 class="fw-bold">How does SAIL look for codecs?</h5>
           <p>Codecs path search algorithm (first found path wins):
+            <h6 class="fw-bold">Conan recipe on any platform</h6>
+            <p>Codecs are combined into a dynamically linked library, so no need to search them.</p>
             <h6 class="fw-bold">VCPKG port on any platform</h6>
             <p>Codecs are combined into a dynamically linked library, so no need to search them.</p>
             <h6 class="fw-bold">Standalone build or bundle, both compiled with SAIL_COMBINE_CODECS=ON</h6>
