@@ -3,6 +3,11 @@
     border-color: #2ea451;
 }
 
+.conan-colors {
+    background-color: #39536d;
+    border-color: #39536d;
+}
+
 ul.emoji-checked-list {
   list-style: none;
   padding: 0;
