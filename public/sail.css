@@ -14,11 +14,6 @@ ul.emoji-checked-list {
   margin: 0;
 }
 
-ul.emoji-checked-list li {
-    padding-left: 1rem;
-    text-indent: -0.7rem;
-}
-
 ul.emoji-checked-list li::before {
     content: "✅ ";
 }
