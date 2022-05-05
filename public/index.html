@@ -83,7 +83,7 @@
               <div class="accordion-body">
                 <pre><code class="language-cpp p-0">struct sail_image *image;
 
-SAIL_TRY(sail_load_image_from_file(path, &image));
+SAIL_TRY(sail_load_from_file(path, &image));
 
 printf("Size: %ux%u, bytes per line: %u, "
        "pixel format: %s, pixels: %p\n",

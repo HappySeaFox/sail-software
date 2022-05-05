@@ -156,7 +156,7 @@
           <h5 class="fw-bold">Does SAIL support loading from memory?</h5>
           <p>Yes. SAIL supports loading/saving from/to files and memory. For technical divers,
              it's also possible to use custom I/O sources.</p>
-          <p>See <code>sail_start_loading_file()</code>, <code>sail_start_loading_memory()</code>, and <code>sail_start_loading_io()</code>.</p>
+          <p>See <code>sail_start_loading_from_file()</code>, <code>sail_start_loading_from_memory()</code>, and <code>sail_start_loading_from_io()</code>.</p>
         </div>
 
         <a name="how-does-sail-support-image-formats"></a>
@@ -262,7 +262,7 @@ SAIL_TRY_OR_CLEANUP(sail_alloc_palette_for_data(SAIL_PIXEL_FORMAT_BPP24_RGB, col
             <pre><code class="language-cpp">void *state = NULL;
 struct sail_image *image = NULL;
 
-SAIL_TRY(sail_start_loading_file(..., &state));
+SAIL_TRY(sail_start_loading_from_file(..., &state));
 
 /*
  * If sail_load_next_frame() fails, the image pointer stays untouched (NULL).
@@ -277,7 +277,7 @@ SAIL_TRY_OR_CLEANUP(sail_load_next_frame(state, &image),
              loading or saving. For example:
             <pre><code class="language-cpp">void *state = NULL;
 
-SAIL_TRY(sail_start_loading_file(..., &state));
+SAIL_TRY(sail_start_loading_from_file(..., &state));
 
 SAIL_TRY_OR_CLEANUP(sail_load_next_frame(state, ...),
                     /* cleanup */ sail_stop_loading(state));</code></pre>
