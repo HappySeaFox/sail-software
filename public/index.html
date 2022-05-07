@@ -81,7 +81,8 @@
             </h2>
             <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExamples">
               <div class="accordion-body">
-                <pre><code class="language-cpp p-0">struct sail_image *image;
+                <pre><code class="language-cpp p-0">/* Junior API demonstration. */
+struct sail_image *image;
 
 SAIL_TRY(sail_load_from_file(path, &image));
 
@@ -105,7 +106,8 @@ sail_destroy_image(image);</code></pre>
             </h2>
             <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExamples">
               <div class="accordion-body">
-                <pre><code class="language-cpp p-0">sail::image image(path);
+                <pre><code class="language-cpp p-0">// Junior API demonstration.
+sail::image image(path);
 
 std::cout
   &lt;&lt; "Size: "
