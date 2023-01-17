@@ -26,18 +26,6 @@
         </div>
 
         <div class="px-4 px-md-5 pb-3 pb-md-4 border-top">
-          <h5 class="fw-bold px-0 py-3">Terminology and build types</h5>
-          <ul>
-            <li><span class="fw-bold">Standalone build</span> - manually compiled with <code>cmake</code>
-                and respective build commands. Extra dependencies like libjpeg ARE NOT shipped with the build.
-                macOS brew package is a good example of a standalone build.</li>
-            <li><span class="fw-bold">Standalone bundle</span> - manually compiled with <code>cmake</code>
-                 and respective build commands. Extra dependencies like libjpeg ARE shipped with the build.
-                 Portable archive for Windows on the releases page on GitHub is a good example of a standalone bundle.</li>
-            <li><span class="fw-bold">Conan recipe</span> - installed from <a href="https://conan.io/center/sail">Conan Center</a>.</li>
-            <li><span class="fw-bold">VCPKG port</span> - installed with <code>vcpkg install sail</code>.</li>
-          </ul>
-
           <h5 class="fw-bold">CMake options overview</h5>
           <ul>
             <li><code>SAIL_BUILD_EXAMPLES=ON|OFF</code> - Build examples. Default: <code>ON</code>.</li>
@@ -62,7 +50,7 @@
         </div>
 
         <div class="px-4 px-md-5 pb-3 pb-md-4 border-top">
-          <h5 class="fw-bold px-0 py-3">Windows (standalone build)</h5>
+          <h5 class="fw-bold px-0 py-3">Windows</h5>
           <h6 class="fw-bold">Build requirements</h6>
           <ul>
             <li>Git</li>
@@ -90,7 +78,7 @@ cmake --build . --config Release --target install</code></pre>
         </div>
 
         <div class="px-4 px-md-5 pb-3 pb-md-4 border-top">
-          <h5 class="fw-bold px-0 py-3">Linux (standalone build)</h5>
+          <h5 class="fw-bold px-0 py-3">Linux</h5>
           <h6 class="fw-bold">Build requirements</h6>
           <ul>
             <li>Git</li>
