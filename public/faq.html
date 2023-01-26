@@ -186,9 +186,9 @@
             <p>Codecs are combined into a dynamically linked library, so no need to search them.</p>
             <h6 class="fw-bold">VCPKG port on any platform</h6>
             <p>Codecs are combined into a dynamically linked library, so no need to search them.</p>
-            <h6 class="fw-bold">Standalone build or bundle, both compiled with SAIL_COMBINE_CODECS=ON</h6>
-            <p>Same to VCPKG port.</p>
-            <h6 class="fw-bold">Windows standalone build or bundle, both compiled with SAIL_COMBINE_CODECS=OFF (the default)</h6>
+            <h6 class="fw-bold">Manually compiled on any platform with SAIL_COMBINE_CODECS=ON</h6>
+            <p>Codecs are combined into a dynamically linked library, so no need to search them.</p>
+            <h6 class="fw-bold">Manually compiled on Windows with SAIL_COMBINE_CODECS=OFF (the default)</h6>
             <p>
               <ol>
                 <li><code>SAIL_CODECS_PATH</code> environment variable</li>
@@ -196,7 +196,7 @@
                 <li>Hardcoded <code>SAIL_CODECS_PATH</code> in config.h</li>
               </ol>
             </p>
-            <h6 class="fw-bold">Unix including macOS (standalone build), compiled with SAIL_COMBINE_CODECS=OFF (the default)</h6>
+            <h6 class="fw-bold">Manually compiled on Unix (including macOS) SAIL_COMBINE_CODECS=OFF (the default)</h6>
             <p>
               <ol>
                 <li><code>SAIL_CODECS_PATH</code> environment variable</li>
