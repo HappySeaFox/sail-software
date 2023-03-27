@@ -43,6 +43,7 @@
           <li><a href="#describe-the-memory-management-techniques-implemented-in-sail">Describe the memory management techniques implemented in SAIL</a></li>
           <li><a href="#can-i-implement-an-image-codec-in-cpp">Can I implement an image codec in C++?</a></li>
           <li><a href="#describe-codec-info-file-format">Describe codec info file format</a></li>
+          <li><a href="#can-i-compile-codecs-dependencies-like-libjpeg-directly-into-sail">Can I compile codecs dependencies (like libjpeg) directly into SAIL?</a></li>
           <li><a href="#are-there-any-cc-examples">Are there any C/C++ examples?</a></li>
           <li><a href="#are-there-any-bindings-to-other-programming-languages">Are there any bindings to other programming languages?</a></li>
           <li><a href="#how-many-image-formats-are-you-going-to-implement">How many image formats do you plan to implement?</a></li>
@@ -452,6 +453,32 @@ compression-level-default=6
 #
 compression-level-step=1</code></pre>
           </p>
+        </div>
+
+        <a name="can-i-compile-codecs-dependencies-like-libjpeg-directly-into-sail"></a>
+        <div>
+          <h5 class="fw-bold">Can I compile codecs dependencies (like libjpeg) directly into SAIL?</h5>
+          <p>Unlike FreeImage, SAIL doesn't allow compiling external dependencies into a single library and I have no plans to allow that.</p>
+          <p>You can still achieve that using external build systems like <code>vcpkg</code>.</p>
+          <p>If you prefer compiling SAIL manually as a shared library, you can compile it against the static vcpkg triplet like <code>x64-windows-static</code>. For example:</p>
+          <pre><code class="language-bash"># Install vcpkg using the official installation guide into your preferred path.
+# For example, into F:/vcpkg.
+
+# Install SAIL in vcpkg just to install all its dependencies
+# as static libs. We'll compile SAIL manually later.
+cd F:/vcpkg/
+vcpkg install sail[all] --triplet x64-windows-static
+
+# Go to the SAIL sources
+cd F:/sail/
+
+# Compile SAIL against vcpkg
+mkdir build
+cd build
+cmake -DSAIL_COMBINE_CODECS=ON -DCMAKE_TOOLCHAIN_FILE=F:/vcpkg/scripts/buildsystems/vcpkg.cmake -DVCPKG_TARGET_TRIPLET=x64-windows-static ..
+cmake --build . --config Release</code></pre>
+
+          <p>This way all codecs and their dependencies will be compiled into <code>sail-codecs.dll</code>.</p>
         </div>
 
         <a name="are-there-any-cc-examples"></a>
