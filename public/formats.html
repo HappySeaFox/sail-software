@@ -413,9 +413,68 @@
           </div>
 
           <div class="accordion-item">
+            <h2 class="accordion-header" id="headingJpegXl">
+              <button class="accordion-button shadow-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseJpegXl" aria-expanded="false" aria-controls="collapseJpegXl">
+                9. JPEG XL
+              </button>
+            </h2>
+            <div id="collapseJpegXl" class="accordion-collapse collapse" aria-labelledby="headingJpegXl" data-bs-parent="#accordionFormats">
+              <div class="accordion-body">
+                <table class="table table-striped table-bordered">
+                  <tr>
+                    <td class="fw-bold">Description</td>
+                    <td><a href="https://wikipedia.org/wiki/JPEG_XL">JPEG XL</a></td>
+                  </tr>
+                  <tr>
+                    <td class="fw-bold">Can&nbsp;Load</td>
+                    <td>
+                        <b>Grayscale:</b> 8-bit, 16-bit.
+                        <b>RGB:</b> 24-bit, 48-bit.
+                        <b>RGBA:</b> 32-bit, 64-bit.
+                        <b>CMYK:</b> 32-bit, 64-bit.
+                        <br/><br/>
+                        <b>Content:</b> Static, Animated, Meta data, ICC profiles.
+                        <br/><br/>
+                        <b>Special properties:</b>
+                             Key: <i>"jpegxl-bits-per-sample"</i>. Possible values: unsigned int.
+                        <br/>Key: <i>"jpegxl-exponent-bits-per-sample"</i>. Possible values: unsigned int.
+                        <br/>Key: <i>"jpegxl-intensity-target"</i>. Possible values: float.
+                        <br/>Key: <i>"jpegxl-min-nits"</i>. Possible values: float.
+                        <br/>Key: <i>"jpegxl-relative-to-max-display"</i>. Possible values: bool.
+                        <br/>Key: <i>"jpegxl-linear-below"</i>. Possible values: float.
+                        <br/>Key: <i>"jpegxl-color-channels"</i>. Possible values: unsigned int.
+                        <br/>Key: <i>"jpegxl-extra-channels"</i>. Possible values: unsigned int.
+                        <br/>Key: <i>"jpegxl-alpha-bits"</i>. Possible values: unsigned int.
+                        <br/>Key: <i>"jpegxl-intrinsic-width"</i>. Possible values: unsigned int.
+                        <br/>Key: <i>"jpegxl-intrinsic-height"</i>. Possible values: unsigned int.
+                        <br/>See the <a href="https://libjxl.readthedocs.io/en/latest/api_metadata.html#_CPPv412JxlBasicInfo">JxlBasicInfo structure</a> documentation in libjxl for more.
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="fw-bold">Cannot&nbsp;Load</td>
+                    <td>-</td>
+                  </tr>
+                  <tr>
+                    <td class="fw-bold">Can&nbsp;Save</td>
+                    <td>Unsupported</td>
+                  </tr>
+                  <tr>
+                    <td class="fw-bold">Cannot&nbsp;Save</td>
+                    <td>-</td>
+                  </tr>
+                  <tr>
+                    <td class="fw-bold">Dependencies</td>
+                    <td>libjxl</td>
+                  </tr>
+                </table>
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item">
             <h2 class="accordion-header" id="headingPcx">
               <button class="accordion-button shadow-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapsePcx" aria-expanded="false" aria-controls="collapsePcx">
-                9. PCX
+                10. PCX
               </button>
             </h2>
             <div id="collapsePcx" class="accordion-collapse collapse" aria-labelledby="headingPcx" data-bs-parent="#accordionFormats">
@@ -461,7 +520,7 @@
           <div class="accordion-item">
             <h2 class="accordion-header" id="headingPng">
               <button class="accordion-button shadow-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapsePng" aria-expanded="false" aria-controls="collapsePng">
-                10. PNG
+                11. PNG
               </button>
             </h2>
             <div id="collapsePng" class="accordion-collapse collapse" aria-labelledby="headingPng" data-bs-parent="#accordionFormats">
@@ -518,7 +577,7 @@
           <div class="accordion-item">
             <h2 class="accordion-header" id="headingPsd">
               <button class="accordion-button shadow-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapsePsd" aria-expanded="false" aria-controls="collapsePsd">
-                11. PSD
+                12. PSD
               </button>
             </h2>
             <div id="collapsePsd" class="accordion-collapse collapse" aria-labelledby="headingPsd" data-bs-parent="#accordionFormats">
@@ -574,7 +633,7 @@
           <div class="accordion-item">
             <h2 class="accordion-header" id="headingQoi">
               <button class="accordion-button shadow-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseQoi" aria-expanded="false" aria-controls="collapseQoi">
-                12. QOI
+                13. QOI
               </button>
             </h2>
             <div id="collapseQoi" class="accordion-collapse collapse" aria-labelledby="headingQoi" data-bs-parent="#accordionFormats">
@@ -622,7 +681,7 @@
           <div class="accordion-item">
             <h2 class="accordion-header" id="headingSvg">
               <button class="accordion-button shadow-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSvg" aria-expanded="false" aria-controls="collapseSvg">
-                13. SVG
+                14. SVG
               </button>
             </h2>
             <div id="collapseSvg" class="accordion-collapse collapse" aria-labelledby="headingSvg" data-bs-parent="#accordionFormats">
@@ -670,7 +729,7 @@
           <div class="accordion-item">
             <h2 class="accordion-header" id="headingTga">
               <button class="accordion-button shadow-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTga" aria-expanded="false" aria-controls="collapseTga">
-                14. TGA
+                15. TGA
               </button>
             </h2>
             <div id="collapseTga" class="accordion-collapse collapse" aria-labelledby="headingTga" data-bs-parent="#accordionFormats">
@@ -715,7 +774,7 @@
           <div class="accordion-item">
             <h2 class="accordion-header" id="headingTiff">
               <button class="accordion-button shadow-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTiff" aria-expanded="false" aria-controls="collapseTiff">
-                15. TIFF
+                16. TIFF
               </button>
             </h2>
             <div id="collapseTiff" class="accordion-collapse collapse" aria-labelledby="headingTiff" data-bs-parent="#accordionFormats">
@@ -765,7 +824,7 @@
           <div class="accordion-item">
             <h2 class="accordion-header" id="headingWal">
               <button class="accordion-button shadow-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseWal" aria-expanded="false" aria-controls="collapseWal">
-                16. WAL
+                17. WAL
               </button>
             </h2>
             <div id="collapseWal" class="accordion-collapse collapse" aria-labelledby="headingWal" data-bs-parent="#accordionFormats">
@@ -807,7 +866,7 @@
           <div class="accordion-item">
             <h2 class="accordion-header" id="headingWebp">
               <button class="accordion-button shadow-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseWebp" aria-expanded="false" aria-controls="collapseWebp">
-                17. WEBP
+                18. WEBP
               </button>
             </h2>
             <div id="collapseWebp" class="accordion-collapse collapse" aria-labelledby="headingWebp" data-bs-parent="#accordionFormats">
@@ -849,7 +908,7 @@
           <div class="accordion-item">
             <h2 class="accordion-header" id="headingXbm">
               <button class="accordion-button shadow-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseXbm" aria-expanded="false" aria-controls="collapseXbm">
-                18. XBM
+                19. XBM
               </button>
             </h2>
             <div id="collapseXbm" class="accordion-collapse collapse" aria-labelledby="headingXbm" data-bs-parent="#accordionFormats">
