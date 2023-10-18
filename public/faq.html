@@ -47,6 +47,7 @@
           <li><a href="#are-there-any-cc-examples">Are there any C/C++ examples?</a></li>
           <li><a href="#are-there-any-bindings-to-other-programming-languages">Are there any bindings to other programming languages?</a></li>
           <li><a href="#how-many-image-formats-are-you-going-to-implement">How many image formats do you plan to implement?</a></li>
+          <li><a href="#i-have-problems-with-include-paths-with-vcpkg-without-cmake">I have problems with include paths with vcpkg without CMake</a></li>
           <li><a href="#i-have-questions-issues-or-proposals">I have questions, issues, or proposals</a></li>
         </ul>
 
@@ -503,6 +504,13 @@ cmake --build . --config Release</code></pre>
           <h5 class="fw-bold">How many image formats are you going to implement?</h5>
           <p>Ksquirrel-libs supported around 60 image formats. I have no plans to port them all. However,
              the most popular image formats will be definitely ported from ksquirrel-libs.</p>
+        </div>
+
+        <a name="i-have-problems-with-include-paths-with-vcpkg-without-cmake"></a>
+        <div>
+          <h5 class="fw-bold">I have problems with include paths with vcpkg without CMake</h5>
+          <p>Add <code>VcpkgInstalledDir/include/sail</code> to the project include path.
+             See <a href="https://learn.microsoft.com/en-us/vcpkg/users/buildsystems/msbuild-integration">https://learn.microsoft.com/en-us/vcpkg/users/buildsystems/msbuild-integration</a>.</p>
         </div>
 
         <a name="i-have-questions-issues-or-proposals"></a>
