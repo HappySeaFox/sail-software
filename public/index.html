@@ -72,43 +72,43 @@
         </div>
 
         <!-- Examples -->
-        <div class="accordion px-4 px-md-5 pb-4 pb-md-5 border-top" id="accordionExamples">
-          <h3 class="fw-bold lh-1 px-0 py-3">Examples</h3>
-          <div class="accordion-item">
-            <h2 class="accordion-header" id="headingOne">
-              <button class="accordion-button shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                C
-              </button>
-            </h2>
-            <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExamples">
-              <div class="accordion-body">
-                <pre><code class="language-cpp p-0">/* Junior API demonstration. */
-struct sail_image *image;
+        <div class="px-4 px-md-5 pb-4 pb-md-5 border-top">
+          <h3 class="fw-bold lh-1 pt-3">Examples</h3>
+
+          <div class="accordion" id="accordionJuniorExamples">
+            <h5 class="fw-bold lh-1 px-0 py-3">Junior API demonstration</h5>
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingJuniorC">
+                <button class="accordion-button shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#collapseJuniorC" aria-expanded="true" aria-controls="collapseJuniorC">
+                  C
+                </button>
+              </h2>
+              <div id="collapseJuniorC" class="accordion-collapse collapse show" aria-labelledby="headingJuniorC" data-bs-parent="#accordionJuniorExamples">
+                <div class="accordion-body">
+                  <pre><code class="language-cpp p-0">struct sail_image *image;
 
 SAIL_TRY(sail_load_from_file(path, &image));
 
 printf("Size: %ux%u, bytes per line: %u, "
-       "pixel format: %s, pixels: %p\n",
+       "pixel format: %s\n",
        image->width,
        image->height,
        image->bytes_per_line,
-       sail_pixel_format_to_string(image->pixel_format),
-       image->pixels);
+       sail_pixel_format_to_string(image->pixel_format));
 
 sail_destroy_image(image);</code></pre>
+                </div>
               </div>
             </div>
-          </div>
-          <div class="accordion-item">
-            <h2 class="accordion-header" id="headingTwo">
-              <button class="accordion-button collapsed shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                C++
-              </button>
-            </h2>
-            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExamples">
-              <div class="accordion-body">
-                <pre><code class="language-cpp p-0">// Junior API demonstration.
-sail::image image(path);
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingJuniorCPP">
+                <button class="accordion-button collapsed shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#collapseJuniorCPP" aria-expanded="false" aria-controls="collapseJuniorCPP">
+                  C++
+                </button>
+              </h2>
+              <div id="collapseJuniorCPP" class="accordion-collapse collapse" aria-labelledby="headingJuniorCPP" data-bs-parent="#accordionJuniorExamples">
+                <div class="accordion-body">
+                  <pre><code class="language-cpp p-0">sail::image image(path);
 
 std::cout
   &lt;&lt; "Size: "
@@ -117,9 +117,75 @@ std::cout
   &lt;&lt; image.bytes_per_line()
   &lt;&lt; ", pixel format: "
   &lt;&lt; image.pixel_format()
-  &lt;&lt; ", pixels: "
-  &lt;&lt; image.pixels()
   &lt;&lt; std::endl;</code></pre>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion" id="accordionAdvancedExamples">
+            <h5 class="fw-bold lh-1 px-0 py-3">Advanced API demonstration</h5>
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingAdvancedC">
+                <button class="accordion-button collapsed shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#collapseAdvancedC" aria-expanded="false" aria-controls="collapseAdvancedC">
+                  C
+                </button>
+              </h2>
+              <div id="collapseAdvancedC" class="accordion-collapse collapse" aria-labelledby="headingAdvancedC" data-bs-parent="#accordionAdvancedExamples">
+                <div class="accordion-body">
+                  <pre><code class="language-cpp p-0">void *state = NULL;
+
+SAIL_TRY_OR_CLEANUP(sail_start_loading_from_file(path, NULL, &state),
+                        /* cleanup */ sail_stop_loading(state));
+
+struct sail_image *image;
+int frame = 0;
+
+for (sail_status_t status = sail_load_next_frame(state, &image);
+        status == SAIL_OK;
+        status = sail_load_next_frame(state, &image)) {
+    printf("Frame #%d, "
+           "size: %ux%u, bytes per line: %u, "
+           "pixel format: %s\n",
+           frame++,
+           image->width,
+           image->height,
+           image->bytes_per_line,
+           sail_pixel_format_to_string(image->pixel_format));
+
+    sail_destroy_image(image);
+}
+
+SAIL_TRY(sail_stop_loading(state));</code></pre>
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingAdvancedCPP">
+                <button class="accordion-button collapsed shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#collapseAdvancedCPP" aria-expanded="false" aria-controls="collapseAdvancedCPP">
+                  C++
+                </button>
+              </h2>
+              <div id="collapseAdvancedCPP" class="accordion-collapse collapse" aria-labelledby="headingAdvancedCPP" data-bs-parent="#accordionAdvancedExamples">
+                <div class="accordion-body">
+                  <pre><code class="language-cpp p-0">sail::image_input image_input(path);
+int frame = 0;
+
+for (sail::image image = image_input.next_frame();
+        image.is_valid();
+        image = image_input.next_frame()) {
+    std::cout
+      &lt;&lt; "Frame #"
+      &lt;&lt; frame++
+      &lt;&lt; ", size: "
+      &lt;&lt; image.width() &lt;&lt; 'x' &lt;&lt; image.height()
+      &lt;&lt; ", bytes per line: "
+      &lt;&lt; image.bytes_per_line()
+      &lt;&lt; ", pixel format: "
+      &lt;&lt; image.pixel_format()
+      &lt;&lt; std::endl;
+}</code></pre>
+                </div>
               </div>
             </div>
           </div>
