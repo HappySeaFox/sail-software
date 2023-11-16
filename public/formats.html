@@ -40,10 +40,9 @@
                       <br/><br/>
                       <b>Content:</b> Static, Animated, Meta data, ICC profiles.
                       <br/><br/>
-                      <b>Special properties:</b> Key: <i>"apng-frames"</i>. Description: Number of frames in the animation.
-                      Possible values: unsigned int.
-                      Key: <i>"apng-plays"</i>. Description: Number of plays of the animation.
-                      Possible values: unsigned int.
+                      <b>Special properties:</b>
+                           <i>"apng-frames"</i>: Number of frames in the animation. Possible values: unsigned int.
+                      <br/><i>"apng-plays"</i>: Number of plays of the animation. Possible values: unsigned int.
                     </td>
                   </tr>
                   <tr>
@@ -180,10 +179,9 @@
                       <br/><br/>
                       <b>Content:</b> Static, Multi-paged.
                       <br/><br/>
-                      <b>Special properties:</b> Key: <i>"cur-hotspot-x"</i>. Description: X coordinate of the hotspot.
-                      Possible values: unsigned int.
-                      Key: <i>"cur-hotspot-y"</i>. Description: Y coordinate of the hotspot.
-                      Possible values: unsigned int.
+                      <b>Special properties:</b>
+                           <i>"cur-hotspot-x"</i>: X coordinate of the hotspot. Possible values: unsigned int.
+                      <br/><i>"cur-hotspot-y"</i>: Y coordinate of the hotspot. Possible values: unsigned int.
                     </td>
                   </tr>
                   <tr>
@@ -341,12 +339,10 @@
                       <br/><br/>
                       <b>Content:</b> Static, Meta data, ICC profiles.
                       <br/><br/>
-                      <b>Tuning:</b> Key: <i>"jpeg-dct-method"</i>. Description: JPEG DCT method.
-                      Possible values: "slow", "fast", "float".
-                      <br/>Key: <i>"jpeg-optimize-coding"</i>. Description: Compute optimal Huffman tables.
-                      Possible values: true or false.
-                      <br/>Key: <i>"jpeg-smoothing-factor"</i>. Description: Smooth the image.
-                      Possible values: Unsigned int range from 1U to 100U.
+                      <b>Tuning:</b>
+                           <i>"jpeg-dct-method"</i>: JPEG DCT method. Possible values: "slow", "fast", "float".
+                      <br/><i>"jpeg-optimize-coding"</i>: Compute optimal Huffman tables. Possible values: true or false.
+                      <br/><i>"jpeg-smoothing-factor"</i>: Smooth the image. Possible values: Unsigned int range from 1U to 100U.
                       <br/>See the libjpeg docs for more.
                     </td>
                   </tr>
@@ -436,17 +432,17 @@
                         <b>Content:</b> Static, Animated, Meta data, ICC profiles.
                         <br/><br/>
                         <b>Special properties:</b>
-                             Key: <i>"jpegxl-bits-per-sample"</i>. Possible values: unsigned int.
-                        <br/>Key: <i>"jpegxl-exponent-bits-per-sample"</i>. Possible values: unsigned int.
-                        <br/>Key: <i>"jpegxl-intensity-target"</i>. Possible values: float.
-                        <br/>Key: <i>"jpegxl-min-nits"</i>. Possible values: float.
-                        <br/>Key: <i>"jpegxl-relative-to-max-display"</i>. Possible values: bool.
-                        <br/>Key: <i>"jpegxl-linear-below"</i>. Possible values: float.
-                        <br/>Key: <i>"jpegxl-color-channels"</i>. Possible values: unsigned int.
-                        <br/>Key: <i>"jpegxl-extra-channels"</i>. Possible values: unsigned int.
-                        <br/>Key: <i>"jpegxl-alpha-bits"</i>. Possible values: unsigned int.
-                        <br/>Key: <i>"jpegxl-intrinsic-width"</i>. Possible values: unsigned int.
-                        <br/>Key: <i>"jpegxl-intrinsic-height"</i>. Possible values: unsigned int.
+                             <i>"jpegxl-bits-per-sample"</i>. Possible values: unsigned int.
+                        <br/><i>"jpegxl-exponent-bits-per-sample"</i>. Possible values: unsigned int.
+                        <br/><i>"jpegxl-intensity-target"</i>. Possible values: float.
+                        <br/><i>"jpegxl-min-nits"</i>. Possible values: float.
+                        <br/><i>"jpegxl-relative-to-max-display"</i>. Possible values: bool.
+                        <br/><i>"jpegxl-linear-below"</i>. Possible values: float.
+                        <br/><i>"jpegxl-color-channels"</i>. Possible values: unsigned int.
+                        <br/><i>"jpegxl-extra-channels"</i>. Possible values: unsigned int.
+                        <br/><i>"jpegxl-alpha-bits"</i>. Possible values: unsigned int.
+                        <br/><i>"jpegxl-intrinsic-width"</i>. Possible values: unsigned int.
+                        <br/><i>"jpegxl-intrinsic-height"</i>. Possible values: unsigned int.
                         <br/>See the <a href="https://libjxl.readthedocs.io/en/latest/api_metadata.html#_CPPv412JxlBasicInfo">JxlBasicInfo structure</a> documentation in libjxl for more.
                     </td>
                   </tr>
@@ -555,9 +551,8 @@
                       <br/><br/>
                       <b>Content:</b> Static, Meta data, ICC profiles.
                       <br/><br/>
-                      <b>Tuning:</b> Key: <i>"png-filter"</i>. Description: PNG filters to apply.
-                      Possible values: "none", "sub", "up", "avg", "paeth".
-                      It's also possible to combine filters with ';' like that: "none;sub;paeth".
+                      <b>Tuning:</b>
+                      <i>"png-filter"</i>: PNG filters to apply. Possible values: "none", "sub", "up", "avg", "paeth". It's also possible to combine filters with ';' like that: "none;sub;paeth".
                       <br/>See the libpng docs for more.
                     </td>
                   </tr>
@@ -597,7 +592,7 @@
                       <b>Content:</b> Static, Meta data.
                       <br/><br/>
                       <b>Special properties:</b>
-                         Key: <i>"pnm-ascii"</i>. Description: True if the image pixels are encoded in ASCII mode. Possible values: bool.
+                      <i>"pnm-ascii"</i>: True if the image pixels are encoded in ASCII mode. Possible values: bool.
                     </td>
                   </tr>
                   <tr>
