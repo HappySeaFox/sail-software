@@ -40,7 +40,7 @@
                       <br/><br/>
                       <b>Content:</b> Static, Animated, Meta data, ICC profiles.
                       <br/><br/>
-                      <b>Special properties:</b>
+                      <b>Special properties<sup><a href="#star-special-properties">[4]</a></sup>:</b>
                            <i>"apng-frames"</i>: Number of frames in the animation. Possible values: unsigned int.
                       <br/><i>"apng-plays"</i>: Number of plays of the animation. Possible values: unsigned int.
                     </td>
@@ -179,7 +179,7 @@
                       <br/><br/>
                       <b>Content:</b> Static, Multi-paged.
                       <br/><br/>
-                      <b>Special properties:</b>
+                      <b>Special properties<sup><a href="#star-special-properties">[4]</a></sup>:</b>
                            <i>"cur-hotspot-x"</i>: X coordinate of the hotspot. Possible values: unsigned int.
                       <br/><i>"cur-hotspot-y"</i>: Y coordinate of the hotspot. Possible values: unsigned int.
                     </td>
@@ -339,7 +339,7 @@
                       <br/><br/>
                       <b>Content:</b> Static, Meta data, ICC profiles.
                       <br/><br/>
-                      <b>Tuning:</b>
+                      <b>Tuning<sup><a href="#star-tuning">[3]</a></sup>:</b>
                            <i>"jpeg-dct-method"</i>: JPEG DCT method. Possible values: "slow", "fast", "float".
                       <br/><i>"jpeg-optimize-coding"</i>: Compute optimal Huffman tables. Possible values: true or false.
                       <br/><i>"jpeg-smoothing-factor"</i>: Smooth the image. Possible values: Unsigned int range from 1U to 100U.
@@ -431,7 +431,7 @@
                         <br/><br/>
                         <b>Content:</b> Static, Animated, Meta data, ICC profiles.
                         <br/><br/>
-                        <b>Special properties:</b>
+                        <b>Special properties<sup><a href="#star-special-properties">[4]</a></sup>:</b>
                              <i>"jpegxl-bits-per-sample"</i>. Possible values: unsigned int.
                         <br/><i>"jpegxl-exponent-bits-per-sample"</i>. Possible values: unsigned int.
                         <br/><i>"jpegxl-intensity-target"</i>. Possible values: float.
@@ -551,7 +551,7 @@
                       <br/><br/>
                       <b>Content:</b> Static, Meta data, ICC profiles.
                       <br/><br/>
-                      <b>Tuning:</b>
+                      <b>Tuning<sup><a href="#star-tuning">[3]</a></sup>:</b>
                       <i>"png-filter"</i>: PNG filters to apply. Possible values: "none", "sub", "up", "avg", "paeth". It's also possible to combine filters with ';' like that: "none;sub;paeth".
                       <br/>See the libpng docs for more.
                     </td>
@@ -591,7 +591,7 @@
                       <br/><br/>
                       <b>Content:</b> Static, Meta data.
                       <br/><br/>
-                      <b>Special properties:</b>
+                      <b>Special properties<sup><a href="#star-special-properties">[4]</a></sup>:</b>
                       <i>"pnm-ascii"</i>: True if the image pixels are encoded in ASCII mode. Possible values: bool.
                     </td>
                   </tr>
@@ -998,6 +998,8 @@
           <ul>
             <li><a name="star-underlying"></a>[1] If supported by the underlying codec like libjpeg.</li>
             <li><a name="star-pcx-rle"></a>[2] Even though uncompressed PCX files are not considered valid by the spec.</li>
+            <li><a name="star-tuning"></a>[3] See <a href="https://github.com/HappySeaFox/sail/blob/24beca80d25b7cd498cdffb433622a653352b7b6/src/sail-common/save_options.h#L69">save_options.tuning</a>.</li>
+            <li><a name="star-special-properties"></a>[4] See <a href="https://github.com/HappySeaFox/sail/blob/24beca80d25b7cd498cdffb433622a653352b7b6/src/sail-common/source_image.h#L101">source_image.special_properties</a>.</li>
           </ul>
         </div>
       </div>
