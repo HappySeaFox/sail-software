@@ -44,6 +44,7 @@
                  not just individual codecs but codec groups by their priority like that: highest-priority;xbm.
                  Other codecs may or may not be enabled depending on found dependencies. When SAIL_ENABLE_CODECS is enabled,
                  SAIL_ONLY_CODECS gets ignored. Default: empty list.</li>
+            <li><code>SAIL_ENABLE_OPENMP=ON|OFF</code> - Enable OpenMP support if it's available in the compiler. Default: <code>ON</code></li>
             <li><code>SAIL_THIRD_PARTY_CODECS_PATH=ON|OFF</code> - Enable loading custom codecs from the ';'-separated paths
                 specified in the SAIL_THIRD_PARTY_CODECS_PATH environment variable. Default: <code>ON</code>.</li>
             <li><code>SAIL_THREAD_SAFE=ON|OFF</code> - Enable working in multi-threaded environments by locking the internal
