@@ -17,3 +17,7 @@ ul.emoji-checked-list {
 ul.emoji-checked-list li::before {
     content: "✅ ";
 }
+
+.navbar-toggler-icon {
+    font-size: 0.8em;
+}
