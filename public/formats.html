@@ -144,11 +144,26 @@
                   </tr>
                   <tr>
                     <td class="fw-bold">Can&nbsp;Save</td>
-                    <td>Unsupported</td>
+                    <td>
+                      <b>Indexed:</b> 1-bit, 4-bit, 8-bit.
+                      <b>Grayscale:</b> 8-bit.
+                      <b>RGB:</b> 16-bit, 24-bit.
+                      <b>RGBA:</b> 32-bit.
+                      <br/><br/>
+                      <b>Compressions:</b> NONE, RLE (RLE4 for 4-bit, RLE8 for 8-bit).
+                      <br/><br/>
+                      <b>Content:</b> Static.
+                    </td>
                   </tr>
                   <tr>
                     <td class="fw-bold">Cannot&nbsp;Save</td>
-                    <td>-</td>
+                    <td>
+                      <b>Compressions:</b> ALPHABITFIELDS, BITFIELDS, JPEG, PNG.
+                      <br/><br/>
+                      <b>Content:</b> Meta data, ICC profiles.
+                      <br/><br/>
+                      <b>BMP Versions:</b> V1 (DDB), V2, V4, V5.
+                    </td>
                   </tr>
                   <tr>
                     <td class="fw-bold">Dependencies</td>
@@ -274,11 +289,26 @@
                   </tr>
                   <tr>
                     <td class="fw-bold">Can&nbsp;Save</td>
-                    <td>Unsupported</td>
+                    <td>
+                      <b>Indexed:</b> 1-bit, 4-bit, 8-bit.
+                      <b>RGB:</b> 24-bit (BGR).
+                      <b>RGBA:</b> 32-bit (BGRA).
+                      <br/><br/>
+                      <b>Compressions:</b> NONE.
+                      <br/><br/>
+                      <b>Content:</b> Static, Multi-paged.
+                      <br/><br/>
+                      <b>Note:</b> Maximum image size is 256x256 pixels.
+                      <br/><br/>
+                      <b>Special properties<sup><a href="#star-special-properties">[4]</a></sup>:</b>
+                           <i>"cur-hotspot-x"</i>, <i>"cur-hotspot-y"</i>: CUR hotspot coordinates. Possible values: unsigned int.
+                    </td>
                   </tr>
                   <tr>
                     <td class="fw-bold">Cannot&nbsp;Save</td>
-                    <td>-</td>
+                    <td>
+                      <b>Content:</b> PNG embedded images, transparency mask optimization.
+                    </td>
                   </tr>
                   <tr>
                     <td class="fw-bold">Dependencies</td>
