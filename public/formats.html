@@ -703,19 +703,23 @@
                 <table class="table table-striped table-bordered">
                   <tr>
                     <td class="fw-bold">Description</td>
-                    <td><a href="https://wikipedia.org/wiki/Portable_anymap">Portable aNy Map</a></td>
+                    <td><a href="https://wikipedia.org/wiki/Portable_anymap">Portable aNy Map / Portable Arbitrary Map</a></td>
                   </tr>
                   <tr>
                     <td class="fw-bold">Can&nbsp;Load</td>
                     <td>
-                      <b>Grayscale:</b> 8-bit, 16-bit.
                       <b>Indexed:</b> 1-bit.
+                      <b>Grayscale:</b> 8-bit, 16-bit.
+                      <b>Grayscale+Alpha:</b> 16-bit, 32-bit.
                       <b>RGB:</b> 24-bit, 48-bit.
+                      <b>RGBA:</b> 32-bit, 64-bit.
                       <br/><br/>
                       <b>Content:</b> Static, Meta data.
                       <br/><br/>
+                      <b>Formats:</b> PBM (P1/P4), PGM (P2/P5), PPM (P3/P6), PAM (P7).
+                      <br/><br/>
                       <b>Special properties<sup><a href="#star-special-properties">[4]</a></sup>:</b>
-                      <i>"pnm-ascii"</i>: True if the image pixels are encoded in ASCII mode. Possible values: bool.
+                      <i>"pnm-ascii"</i>: True if the image pixels are encoded in ASCII mode (P1-P3). Possible values: bool.
                     </td>
                   </tr>
                   <tr>
@@ -724,7 +728,17 @@
                   </tr>
                   <tr>
                     <td class="fw-bold">Can&nbsp;Save</td>
-                    <td>Unsupported</td>
+                    <td>
+                      <b>Indexed:</b> 1-bit (P4).
+                      <b>Grayscale:</b> 8-bit, 16-bit (P5).
+                      <b>Grayscale+Alpha:</b> 16-bit, 32-bit (P7/PAM).
+                      <b>RGB:</b> 24-bit, 48-bit (P6).
+                      <b>RGBA:</b> 32-bit, 64-bit (P7/PAM).
+                      <br/><br/>
+                      <b>Content:</b> Static.
+                      <br/><br/>
+                      <b>Compression:</b> None.
+                    </td>
                   </tr>
                   <tr>
                     <td class="fw-bold">Cannot&nbsp;Save</td>
