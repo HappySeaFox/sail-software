@@ -514,9 +514,11 @@
                     <td class="fw-bold">Can&nbsp;Load</td>
                     <td>
                         <b>Grayscale:</b> 8-bit, 16-bit.
+                        <b>Grayscale+Alpha:</b> 16-bit, 32-bit.
                         <b>RGB:</b> 24-bit, 48-bit.
                         <b>RGBA:</b> 32-bit, 64-bit.
                         <b>CMYK:</b> 32-bit, 64-bit.
+                        <b>CMYKA:</b> 40-bit, 80-bit.
                         <br/><br/>
                         <b>Content:</b> Static, Animated, Meta data, ICC profiles.
                         <br/><br/>
@@ -541,11 +543,35 @@
                   </tr>
                   <tr>
                     <td class="fw-bold">Can&nbsp;Save</td>
-                    <td>Unsupported</td>
+                    <td>
+                        <b>Grayscale:</b> 8-bit, 16-bit.
+                        <b>Grayscale+Alpha:</b> 16-bit (8+8), 32-bit (16+16).
+                        <b>RGB:</b> 24-bit, 48-bit.
+                        <b>RGBA:</b> 32-bit, 64-bit.
+                        <br/><br/>
+                        <b>Content:</b> Static, Animated, ICC profiles.
+                        <br/><br/>
+                        <b>Tuning:</b> <i>"jpegxl-effort"</i>: Encoder effort/speed (1=fastest, 9=slowest). Values: 1-9. Default: 7.
+                        <br/><i>"jpegxl-decoding-speed"</i>: Decoding speed tier (0=best quality, 4=fastest). Values: 0-4. Default: 0.
+                        <br/><i>"jpegxl-modular"</i>: Encoding mode (-1=auto, 0=VarDCT, 1=modular). Values: -1, 0, 1. Default: -1.
+                        <br/><i>"jpegxl-progressive-ac"</i>: Progressive AC mode (-1=auto, 0=off, 1=on). Default: -1.
+                        <br/><i>"jpegxl-progressive-dc"</i>: Progressive DC mode (-1=auto, 0=off, 1, 2). Default: -1.
+                        <br/><i>"jpegxl-responsive"</i>: Responsive modular mode (-1=auto, 0=off, 1=on). Default: -1.
+                        <br/><i>"jpegxl-epf"</i>: Edge Preserving Filter (-1=auto, 0-3). Default: -1.
+                        <br/><i>"jpegxl-gaborish"</i>: Gaborish filter (-1=auto, 0=off, 1=on). Default: -1.
+                        <br/><i>"jpegxl-photon-noise"</i>: Film grain noise (0=none, 3200=high). Default: 0.
+                        <br/><i>"jpegxl-modular-predictor"</i>: Modular predictor (-1=auto, 0-15). Default: -1.
+                        <br/><i>"jpegxl-palette-colors"</i>: Use palette if colors ≤ N (-1=auto, 0-1024). Default: -1.
+                        <br/><i>"jpegxl-resampling"</i>: Downsampling factor (-1, 1, 2, 4, 8). Default: -1.
+                    </td>
                   </tr>
                   <tr>
                     <td class="fw-bold">Cannot&nbsp;Save</td>
-                    <td>-</td>
+                    <td>
+                        <b>Pixel formats:</b> CMYK, CMYKA.
+                        <br/><br/>
+                        <b>Content:</b> Meta data.
+                    </td>
                   </tr>
                   <tr>
                     <td class="fw-bold">Dependencies</td>
