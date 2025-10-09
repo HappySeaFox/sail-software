@@ -41,7 +41,7 @@
                       <b>Content:</b> Static, Animated, Meta data, ICC profiles.
                       <br/><br/>
                       <b>Special properties<sup><a href="#star-special-properties">[4]</a></sup>:</b>
-                           <code>"apng-frames"</code>: Number of frames in the animation. Possible values: unsigned int.
+                      <br/><code>"apng-frames"</code>: Number of frames in the animation. Possible values: unsigned int.
                       <br/><code>"apng-plays"</code>: Number of plays of the animation. Possible values: unsigned int.
                     </td>
                   </tr>
@@ -86,7 +86,7 @@
                       <b>Content:</b> Static, Animated, Meta data, ICC profiles.
                       <br/><br/>
                       <b>Tuning<sup><a href="#star-tuning">[3]</a></sup>:</b>
-                           <code>"avif-threads"</code>: Number of decoder threads. Default: 1.
+                      <br/><code>"avif-threads"</code>: Number of decoder threads. Default: 1.
                     </td>
                   </tr>
                   <tr>
@@ -108,7 +108,7 @@
                       <b>Content:</b> Static, Animated, Meta data, ICC profiles.
                       <br/><br/>
                       <b>Tuning<sup><a href="#star-tuning">[3]</a></sup>:</b>
-                           <code>"avif-speed"</code>: Encoding speed (0=slowest/best compression, 10=fastest). Default: 6.
+                      <br/><code>"avif-speed"</code>: Encoding speed (0=slowest/best compression, 10=fastest). Default: 6.
                       <br/><code>"avif-threads"</code>: Number of encoder threads. Default: 1.
                       <br/><code>"avif-auto-tiling"</code>: Enable automatic tiling for parallel encoding. Values: true or false.
                     </td>
@@ -215,7 +215,7 @@
                       <b>Content:</b> Static, Multi-paged.
                       <br/><br/>
                       <b>Special properties<sup><a href="#star-special-properties">[4]</a></sup>:</b>
-                           <code>"cur-hotspot-x"</code>: X coordinate of the hotspot. Possible values: unsigned int.
+                      <br/><code>"cur-hotspot-x"</code>: X coordinate of the hotspot. Possible values: unsigned int.
                       <br/><code>"cur-hotspot-y"</code>: Y coordinate of the hotspot. Possible values: unsigned int.
                     </td>
                   </tr>
@@ -275,7 +275,7 @@
                       <b>Content:</b> Static, Animated, Meta data (comments only).
                       <br/><br/>
                       <b>Tuning<sup><a href="#star-tuning">[3]</a></sup>:</b>
-                           <code>"gif-transparency-index"</code>: Transparent color index in palette (-1 for no transparency). Default: -1.
+                      <br/><code>"gif-transparency-index"</code>: Transparent color index in palette (-1 for no transparency). Default: -1.
                       <br/><code>"gif-loop-count"</code>: Number of animation loops (0 for infinite). Default: 0.
                       <br/><code>"gif-background-color"</code>: Background color index in palette. Default: 0.
                     </td>
@@ -332,7 +332,7 @@
                       <b>Note:</b> Maximum image size is 256x256 pixels.
                       <br/><br/>
                       <b>Special properties<sup><a href="#star-special-properties">[4]</a></sup>:</b>
-                           <code>"cur-hotspot-x"</code>, <code>"cur-hotspot-y"</code>: CUR hotspot coordinates. Possible values: unsigned int.
+                      <br/><code>"cur-hotspot-x"</code>, <code>"cur-hotspot-y"</code>: CUR hotspot coordinates. Possible values: unsigned int.
                     </td>
                   </tr>
                   <tr>
@@ -401,7 +401,7 @@
                       <b>Content:</b> Static, Meta data, ICC profiles.
                       <br/><br/>
                       <b>Tuning<sup><a href="#star-tuning">[3]</a></sup>:</b>
-                           <code>"jpeg-dct-method"</code>: JPEG DCT method. Possible values: "slow", "fast", "float".
+                      <br/><code>"jpeg-dct-method"</code>: JPEG DCT method. Possible values: "slow", "fast", "float".
                       <br/><code>"jpeg-optimize-coding"</code>: Compute optimal Huffman tables. Possible values: true or false.
                       <br/><code>"jpeg-smoothing-factor"</code>: Smooth the image. Possible values: Unsigned int range from 1U to 100U.
                       <br/>See the libjpeg docs for more.
@@ -447,7 +447,7 @@
                       <b>Content:</b> Static, ICC profiles.
                       <br/><br/>
                       <b>Tuning<sup><a href="#star-tuning">[3]</a></sup>:</b>
-                           <code>"jpeg2000-reduce"</code>: Discard resolution levels (0=full resolution, 1=half, 2=quarter, etc.). Possible values: unsigned int.
+                      <br/><code>"jpeg2000-reduce"</code>: Discard resolution levels (0=full resolution, 1=half, 2=quarter, etc.). Possible values: unsigned int.
                       <br/><code>"jpeg2000-layer"</code>: Maximum quality layers to decode (0=all). Possible values: unsigned int.
                       <br/><code>"jpeg2000-tile-index"</code>: Specific tile index to decode. Possible values: unsigned int.
                       <br/><code>"jpeg2000-num-tiles"</code>: Number of tiles to decode. Possible values: unsigned int.
@@ -475,7 +475,7 @@
                       <b>Content:</b> Static, ICC profiles (requires OpenJPEG 2.5.4+).
                       <br/><br/>
                       <b>Tuning<sup><a href="#star-tuning">[3]</a></sup>:</b>
-                           <code>"jpeg2000-irreversible"</code>: Use lossy DWT 9-7 instead of lossless 5-3. Possible values: bool.
+                      <br/><code>"jpeg2000-irreversible"</code>: Use lossy DWT 9-7 instead of lossless 5-3. Possible values: bool.
                       <br/><code>"jpeg2000-numresolution"</code>: Number of resolution levels (1-32). Possible values: int.
                       <br/><code>"jpeg2000-prog-order"</code>: Progression order. Possible values: "lrcp", "rlcp", "rpcl", "pcrl", "cprl".
                       <br/><code>"jpeg2000-codeblock-width"</code>: Code block width (4-1024, power of 2). Possible values: int.
@@ -523,7 +523,7 @@
                         <b>Content:</b> Static, Animated, Meta data, ICC profiles.
                         <br/><br/>
                         <b>Special properties<sup><a href="#star-special-properties">[4]</a></sup>:</b>
-                             <code>"jpegxl-bits-per-sample"</code>. Possible values: unsigned int.
+                        <br/><code>"jpegxl-bits-per-sample"</code>. Possible values: unsigned int.
                         <br/><code>"jpegxl-exponent-bits-per-sample"</code>. Possible values: unsigned int.
                         <br/><code>"jpegxl-intensity-target"</code>. Possible values: float.
                         <br/><code>"jpegxl-min-nits"</code>. Possible values: float.
@@ -551,7 +551,8 @@
                         <br/><br/>
                         <b>Content:</b> Static, Animated, ICC profiles.
                         <br/><br/>
-                        <b>Tuning:</b> <code>"jpegxl-effort"</code>: Encoder effort/speed (1=fastest, 9=slowest). Values: 1-9. Default: 7.
+                        <b>Tuning<sup><a href="#star-tuning">[3]</a></sup>:</b>
+                        <br/><code>"jpegxl-effort"</code>: Encoder effort/speed (1=fastest, 9=slowest). Values: 1-9. Default: 7.
                         <br/><code>"jpegxl-decoding-speed"</code>: Decoding speed tier (0=best quality, 4=fastest). Values: 0-4. Default: 0.
                         <br/><code>"jpegxl-modular"</code>: Encoding mode (-1=auto, 0=VarDCT, 1=modular). Values: -1, 0, 1. Default: -1.
                         <br/><code>"jpegxl-progressive-ac"</code>: Progressive AC mode (-1=auto, 0=off, 1=on). Default: -1.
@@ -675,7 +676,7 @@
                       <b>Content:</b> Static, Meta data, ICC profiles.
                       <br/><br/>
                       <b>Tuning<sup><a href="#star-tuning">[3]</a></sup>:</b>
-                      <code>"png-filter"</code>: PNG filters to apply. Possible values: "none", "sub", "up", "avg", "paeth". It's also possible to combine filters with ';' like that: "none;sub;paeth".
+                      <br/><code>"png-filter"</code>: PNG filters to apply. Possible values: "none", "sub", "up", "avg", "paeth". It's also possible to combine filters with ';' like that: "none;sub;paeth".
                       <br/>See the libpng docs for more.
                     </td>
                   </tr>
@@ -719,7 +720,7 @@
                       <b>Formats:</b> PBM (P1/P4), PGM (P2/P5), PPM (P3/P6), PAM (P7).
                       <br/><br/>
                       <b>Special properties<sup><a href="#star-special-properties">[4]</a></sup>:</b>
-                      <code>"pnm-ascii"</code>: True if the image pixels are encoded in ASCII mode (P1-P3). Possible values: bool.
+                      <br/><code>"pnm-ascii"</code>: True if the image pixels are encoded in ASCII mode (P1-P3). Possible values: bool.
                     </td>
                   </tr>
                   <tr>
