@@ -1116,9 +1116,36 @@
                       <b>ARGB:</b> 32-bit.
                       <b>ABGR:</b> 32-bit.
                       <br/><br/>
+                      <b>Compressions:</b> WebP.
+                      <br/><br/>
                       <b>Content:</b> Static, Animated.
                       <br/><br/>
-                      <b>Compression:</b> WebP.
+                      <b>Tuning<sup><a href="#star-tuning">[3]</a></sup>:</b>
+                      <br/><code>"webp-lossless"</code>: Lossless encoding (0=lossy, 1=lossless). Default: 0.
+                      <br/><code>"webp-method"</code>: Quality/speed trade-off (0=fast, 6=slower-better). Default: 4.
+                      <br/><code>"webp-image-hint"</code>: Image type hint ("default", "picture", "photo", "graph"). Default: "default".
+                      <br/><code>"webp-target-size"</code>: Target size in bytes (0=disabled). Default: 0.
+                      <br/><code>"webp-target-psnr"</code>: Minimal distortion to achieve (0=disabled). Default: 0.
+                      <br/><code>"webp-segments"</code>: Maximum number of segments (1-4). Default: 4.
+                      <br/><code>"webp-sns-strength"</code>: Spatial Noise Shaping (0=off, 100=max). Default: 50.
+                      <br/><code>"webp-filter-strength"</code>: Filtering strength (0=off, 100=strongest). Default: 60.
+                      <br/><code>"webp-filter-sharpness"</code>: Filtering sharpness (0=off, 7=least sharp). Default: 0.
+                      <br/><code>"webp-filter-type"</code>: Filtering type ("simple", "strong"). Default: "strong".
+                      <br/><code>"webp-autofilter"</code>: Auto adjust filter strength (0, 1). Default: 0.
+                      <br/><code>"webp-alpha-compression"</code>: Alpha plane compression (0=none, 1=compressed). Default: 1.
+                      <br/><code>"webp-alpha-filtering"</code>: Alpha predictive filtering ("none", "fast", "best"). Default: "fast".
+                      <br/><code>"webp-alpha-quality"</code>: Alpha quality (0=smallest, 100=lossless). Default: 100.
+                      <br/><code>"webp-pass"</code>: Number of entropy analysis passes (1-10). Default: 1.
+                      <br/><code>"webp-preprocessing"</code>: Preprocessing filter ("none", "segment-smooth", "pseudo-random-dithering"). Default: "none".
+                      <br/><code>"webp-partitions"</code>: log2(number of token partitions) (0-3). Default: 0.
+                      <br/><code>"webp-partition-limit"</code>: Quality degradation for 512k limit (0=none, 100=max). Default: 0.
+                      <br/><code>"webp-emulate-jpeg-size"</code>: Remap parameters to match JPEG size (0, 1). Default: 0.
+                      <br/><code>"webp-thread-level"</code>: Use multi-threaded encoding (0, 1). Default: 0.
+                      <br/><code>"webp-low-memory"</code>: Reduce memory usage (0, 1). Default: 0.
+                      <br/><code>"webp-near-lossless"</code>: Near lossless encoding (0=max loss, 100=off). Default: 100.
+                      <br/><code>"webp-exact"</code>: Preserve exact RGB under transparent areas (0, 1). Default: 0.
+                      <br/><code>"webp-use-delta-palette"</code>: Use delta palette (0, 1). Default: 0.
+                      <br/><code>"webp-use-sharp-yuv"</code>: Use sharp RGB→YUV conversion (0, 1). Default: 0.
                     </td>
                   </tr>
                   <tr>
@@ -1171,6 +1198,10 @@
                       <b>Compressions:</b> NONE.
                       <br/><br/>
                       <b>Content:</b> Static.
+                      <br/><br/>
+                      <b>Tuning<sup><a href="#star-tuning">[3]</a></sup>:</b>
+                      <br/><code>"xbm-version"</code>: XBM format version ("X10" or "X11"). Default: "X11".
+                      <br/><code>"xbm-name"</code>: Variable name for the C array. Default: "image".
                     </td>
                   </tr>
                   <tr>
