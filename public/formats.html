@@ -86,7 +86,7 @@
                       <b>Content:</b> Static, Animated, Meta data, ICC profiles.
                       <br/><br/>
                       <b>Tuning<sup><a href="#star-tuning">[3]</a></sup>:</b>
-                      <br/><code>"avif-threads"</code>: Number of decoder threads. Default: 1.
+                      <br/><code>"avif-threads"</code>: Number of decoder threads. Values: int/unsigned int. Default: 1.
                     </td>
                   </tr>
                   <tr>
@@ -108,8 +108,8 @@
                       <b>Content:</b> Static, Animated, Meta data, ICC profiles.
                       <br/><br/>
                       <b>Tuning<sup><a href="#star-tuning">[3]</a></sup>:</b>
-                      <br/><code>"avif-speed"</code>: Encoding speed (0=slowest/best compression, 10=fastest). Default: 6.
-                      <br/><code>"avif-threads"</code>: Number of encoder threads. Default: 1.
+                      <br/><code>"avif-speed"</code>: Encoding speed (0=slowest/best compression, 10=fastest). Values: int/unsigned int 0-10. Default: 6.
+                      <br/><code>"avif-threads"</code>: Number of encoder threads. Values: int/unsigned int. Default: 1.
                       <br/><code>"avif-auto-tiling"</code>: Enable automatic tiling for parallel encoding. Values: true or false.
                     </td>
                   </tr>
@@ -275,9 +275,9 @@
                       <b>Content:</b> Static, Animated, Meta data (comments only).
                       <br/><br/>
                       <b>Tuning<sup><a href="#star-tuning">[3]</a></sup>:</b>
-                      <br/><code>"gif-transparency-index"</code>: Transparent color index in palette (-1 for no transparency). Default: -1.
-                      <br/><code>"gif-loop-count"</code>: Number of animation loops (0 for infinite). Default: 0.
-                      <br/><code>"gif-background-color"</code>: Background color index in palette. Default: 0.
+                      <br/><code>"gif-transparency-index"</code>: Transparent color index in palette (-1 for no transparency). Values: int/unsigned int. Default: -1.
+                      <br/><code>"gif-loop-count"</code>: Number of animation loops (0 for infinite). Values: int/unsigned int. Default: 0.
+                      <br/><code>"gif-background-color"</code>: Background color index in palette. Values: int/unsigned int. Default: 0.
                     </td>
                   </tr>
                   <tr>
@@ -403,7 +403,7 @@
                       <b>Tuning<sup><a href="#star-tuning">[3]</a></sup>:</b>
                       <br/><code>"jpeg-dct-method"</code>: JPEG DCT method. Possible values: "slow", "fast", "float".
                       <br/><code>"jpeg-optimize-coding"</code>: Compute optimal Huffman tables. Possible values: true or false.
-                      <br/><code>"jpeg-smoothing-factor"</code>: Smooth the image. Possible values: Unsigned int range from 1U to 100U.
+                      <br/><code>"jpeg-smoothing-factor"</code>: Image smoothing (0-100). Values: int/unsigned int 0-100.
                       <br/>See the libjpeg docs for more.
                     </td>
                   </tr>
@@ -447,10 +447,10 @@
                       <b>Content:</b> Static, ICC profiles.
                       <br/><br/>
                       <b>Tuning<sup><a href="#star-tuning">[3]</a></sup>:</b>
-                      <br/><code>"jpeg2000-reduce"</code>: Discard resolution levels (0=full resolution, 1=half, 2=quarter, etc.). Possible values: unsigned int.
-                      <br/><code>"jpeg2000-layer"</code>: Maximum quality layers to decode (0=all). Possible values: unsigned int.
-                      <br/><code>"jpeg2000-tile-index"</code>: Specific tile index to decode. Possible values: unsigned int.
-                      <br/><code>"jpeg2000-num-tiles"</code>: Number of tiles to decode. Possible values: unsigned int.
+                      <br/><code>"jpeg2000-reduce"</code>: Discard resolution levels (0=full resolution, 1=half, 2=quarter, etc.). Values: int/unsigned int.
+                      <br/><code>"jpeg2000-layer"</code>: Maximum quality layers to decode (0=all). Values: int/unsigned int.
+                      <br/><code>"jpeg2000-tile-index"</code>: Specific tile index to decode. Values: int/unsigned int.
+                      <br/><code>"jpeg2000-num-tiles"</code>: Number of tiles to decode. Values: int/unsigned int.
                     </td>
                   </tr>
                   <tr>
@@ -476,10 +476,10 @@
                       <br/><br/>
                       <b>Tuning<sup><a href="#star-tuning">[3]</a></sup>:</b>
                       <br/><code>"jpeg2000-irreversible"</code>: Use lossy DWT 9-7 instead of lossless 5-3. Possible values: bool.
-                      <br/><code>"jpeg2000-numresolution"</code>: Number of resolution levels (1-32). Possible values: int.
+                      <br/><code>"jpeg2000-numresolution"</code>: Number of resolution levels (1-32). Values: int/unsigned int.
                       <br/><code>"jpeg2000-prog-order"</code>: Progression order. Possible values: "lrcp", "rlcp", "rpcl", "pcrl", "cprl".
-                      <br/><code>"jpeg2000-codeblock-width"</code>: Code block width (4-1024, power of 2). Possible values: int.
-                      <br/><code>"jpeg2000-codeblock-height"</code>: Code block height (4-1024, power of 2). Possible values: int.
+                      <br/><code>"jpeg2000-codeblock-width"</code>: Code block width (4-1024, power of 2). Values: int/unsigned int.
+                      <br/><code>"jpeg2000-codeblock-height"</code>: Code block height (4-1024, power of 2). Values: int/unsigned int.
                     </td>
                   </tr>
                   <tr>
@@ -535,6 +535,10 @@
                         <br/><code>"jpegxl-intrinsic-width"</code>. Possible values: unsigned int.
                         <br/><code>"jpegxl-intrinsic-height"</code>. Possible values: unsigned int.
                         <br/>See the <a href="https://libjxl.readthedocs.io/en/latest/api_metadata.html#_CPPv412JxlBasicInfo">JxlBasicInfo structure</a> documentation in libjxl for more.
+                        <br/><br/>
+                        <b>Tuning<sup><a href="#star-tuning">[3]</a></sup>:</b>
+                        <br/><code>"jpegxl-desired-intensity-target"</code>: Desired display intensity target. Values: float/double.
+                        <br/><code>"jpegxl-render-spotcolors"</code>: Render spot colors. Values: bool.
                     </td>
                   </tr>
                   <tr>
@@ -552,18 +556,18 @@
                         <b>Content:</b> Static, Animated, ICC profiles.
                         <br/><br/>
                         <b>Tuning<sup><a href="#star-tuning">[3]</a></sup>:</b>
-                        <br/><code>"jpegxl-effort"</code>: Encoder effort/speed (1=fastest, 9=slowest). Values: 1-9. Default: 7.
-                        <br/><code>"jpegxl-decoding-speed"</code>: Decoding speed tier (0=best quality, 4=fastest). Values: 0-4. Default: 0.
-                        <br/><code>"jpegxl-modular"</code>: Encoding mode (-1=auto, 0=VarDCT, 1=modular). Values: -1, 0, 1. Default: -1.
-                        <br/><code>"jpegxl-progressive-ac"</code>: Progressive AC mode (-1=auto, 0=off, 1=on). Default: -1.
-                        <br/><code>"jpegxl-progressive-dc"</code>: Progressive DC mode (-1=auto, 0=off, 1, 2). Default: -1.
-                        <br/><code>"jpegxl-responsive"</code>: Responsive modular mode (-1=auto, 0=off, 1=on). Default: -1.
-                        <br/><code>"jpegxl-epf"</code>: Edge Preserving Filter (-1=auto, 0-3). Default: -1.
-                        <br/><code>"jpegxl-gaborish"</code>: Gaborish filter (-1=auto, 0=off, 1=on). Default: -1.
-                        <br/><code>"jpegxl-photon-noise"</code>: Film grain noise (0=none, 3200=high). Default: 0.
-                        <br/><code>"jpegxl-modular-predictor"</code>: Modular predictor (-1=auto, 0-15). Default: -1.
-                        <br/><code>"jpegxl-palette-colors"</code>: Use palette if colors ≤ N (-1=auto, 0-1024). Default: -1.
-                        <br/><code>"jpegxl-resampling"</code>: Downsampling factor (-1, 1, 2, 4, 8). Default: -1.
+                        <br/><code>"jpegxl-effort"</code>: Encoder effort/speed (1=fastest, 9=slowest). Values: int/unsigned int 1-9. Default: 7.
+                        <br/><code>"jpegxl-decoding-speed"</code>: Decoding speed tier (0=best quality, 4=fastest). Values: int/unsigned int 0-4. Default: 0.
+                        <br/><code>"jpegxl-modular"</code>: Encoding mode (-1=auto, 0=VarDCT, 1=modular). Values: int/unsigned int -1, 0, 1. Default: -1.
+                        <br/><code>"jpegxl-progressive-ac"</code>: Progressive AC mode (-1=auto, 0=off, 1=on). Values: int/unsigned int. Default: -1.
+                        <br/><code>"jpegxl-progressive-dc"</code>: Progressive DC mode (-1=auto, 0=off, 1, 2). Values: int/unsigned int. Default: -1.
+                        <br/><code>"jpegxl-responsive"</code>: Responsive modular mode (-1=auto, 0=off, 1=on). Values: int/unsigned int. Default: -1.
+                        <br/><code>"jpegxl-epf"</code>: Edge Preserving Filter (-1=auto, 0-3). Values: int/unsigned int. Default: -1.
+                        <br/><code>"jpegxl-gaborish"</code>: Gaborish filter (-1=auto, 0=off, 1=on). Values: int/unsigned int. Default: -1.
+                        <br/><code>"jpegxl-photon-noise"</code>: Film grain noise (0=none, 3200=high). Values: int/unsigned int. Default: 0.
+                        <br/><code>"jpegxl-modular-predictor"</code>: Modular predictor (-1=auto, 0-15). Values: int/unsigned int. Default: -1.
+                        <br/><code>"jpegxl-palette-colors"</code>: Use palette if colors ≤ N (-1=auto, 0-1024). Values: int/unsigned int. Default: -1.
+                        <br/><code>"jpegxl-resampling"</code>: Downsampling factor (-1, 1, 2, 4, 8). Values: int/unsigned int. Default: -1.
                     </td>
                   </tr>
                   <tr>
@@ -1026,8 +1030,8 @@
                       <br/><br/>
                       <b>Tuning options<sup><a href="#star-tuning">[3]</a></sup>:</b>
                       <br/><code>tiff-predictor</code>: Prediction scheme for LZW/DEFLATE. Possible values: "none", "horizontal", "floating-point".
-                      <br/><code>tiff-jpeg-quality</code>: JPEG quality (1-100). Default: 75.
-                      <br/><code>tiff-zip-quality</code>: ZIP/DEFLATE quality (1-9). Default: 6.
+                      <br/><code>tiff-jpeg-quality</code>: JPEG quality (1-100). Values: int/unsigned int. Default: 75.
+                      <br/><code>tiff-zip-quality</code>: ZIP/DEFLATE quality (1-9). Values: int/unsigned int. Default: 6.
                     </td>
                   </tr>
                   <tr>
@@ -1125,31 +1129,31 @@
                       <b>Content:</b> Static, Animated.
                       <br/><br/>
                       <b>Tuning<sup><a href="#star-tuning">[3]</a></sup>:</b>
-                      <br/><code>"webp-lossless"</code>: Lossless encoding (0=lossy, 1=lossless). Default: 0.
-                      <br/><code>"webp-method"</code>: Quality/speed trade-off (0=fast, 6=slower-better). Default: 4.
-                      <br/><code>"webp-image-hint"</code>: Image type hint ("default", "picture", "photo", "graph"). Default: "default".
-                      <br/><code>"webp-target-size"</code>: Target size in bytes (0=disabled). Default: 0.
-                      <br/><code>"webp-target-psnr"</code>: Minimal distortion to achieve (0=disabled). Default: 0.
-                      <br/><code>"webp-segments"</code>: Maximum number of segments (1-4). Default: 4.
-                      <br/><code>"webp-sns-strength"</code>: Spatial Noise Shaping (0=off, 100=max). Default: 50.
-                      <br/><code>"webp-filter-strength"</code>: Filtering strength (0=off, 100=strongest). Default: 60.
-                      <br/><code>"webp-filter-sharpness"</code>: Filtering sharpness (0=off, 7=least sharp). Default: 0.
-                      <br/><code>"webp-filter-type"</code>: Filtering type ("simple", "strong"). Default: "strong".
-                      <br/><code>"webp-autofilter"</code>: Auto adjust filter strength (0, 1). Default: 0.
-                      <br/><code>"webp-alpha-compression"</code>: Alpha plane compression (0=none, 1=compressed). Default: 1.
-                      <br/><code>"webp-alpha-filtering"</code>: Alpha predictive filtering ("none", "fast", "best"). Default: "fast".
-                      <br/><code>"webp-alpha-quality"</code>: Alpha quality (0=smallest, 100=lossless). Default: 100.
-                      <br/><code>"webp-pass"</code>: Number of entropy analysis passes (1-10). Default: 1.
-                      <br/><code>"webp-preprocessing"</code>: Preprocessing filter ("none", "segment-smooth", "pseudo-random-dithering"). Default: "none".
-                      <br/><code>"webp-partitions"</code>: log2(number of token partitions) (0-3). Default: 0.
-                      <br/><code>"webp-partition-limit"</code>: Quality degradation for 512k limit (0=none, 100=max). Default: 0.
-                      <br/><code>"webp-emulate-jpeg-size"</code>: Remap parameters to match JPEG size (0, 1). Default: 0.
-                      <br/><code>"webp-thread-level"</code>: Use multi-threaded encoding (0, 1). Default: 0.
-                      <br/><code>"webp-low-memory"</code>: Reduce memory usage (0, 1). Default: 0.
-                      <br/><code>"webp-near-lossless"</code>: Near lossless encoding (0=max loss, 100=off). Default: 100.
-                      <br/><code>"webp-exact"</code>: Preserve exact RGB under transparent areas (0, 1). Default: 0.
-                      <br/><code>"webp-use-delta-palette"</code>: Use delta palette (0, 1). Default: 0.
-                      <br/><code>"webp-use-sharp-yuv"</code>: Use sharp RGB→YUV conversion (0, 1). Default: 0.
+                      <br/><code>"webp-lossless"</code>: Lossless encoding. Values: int/unsigned int 0 (lossy) or 1 (lossless). Default: 0.
+                      <br/><code>"webp-method"</code>: Quality/speed trade-off. Values: int/unsigned int 0-6 (0=fast, 6=slower-better). Default: 4.
+                      <br/><code>"webp-image-hint"</code>: Image type hint. Values: "default", "picture", "photo", "graph". Default: "default".
+                      <br/><code>"webp-target-size"</code>: Target size in bytes (0=disabled). Values: int/unsigned int. Default: 0.
+                      <br/><code>"webp-target-psnr"</code>: Minimal distortion to achieve (0=disabled). Values: float/double. Default: 0.
+                      <br/><code>"webp-segments"</code>: Maximum number of segments. Values: int/unsigned int 1-4. Default: 4.
+                      <br/><code>"webp-sns-strength"</code>: Spatial Noise Shaping. Values: int/unsigned int 0-100 (0=off, 100=max). Default: 50.
+                      <br/><code>"webp-filter-strength"</code>: Filtering strength. Values: int/unsigned int 0-100 (0=off, 100=strongest). Default: 60.
+                      <br/><code>"webp-filter-sharpness"</code>: Filtering sharpness. Values: int/unsigned int 0-7 (0=off, 7=least sharp). Default: 0.
+                      <br/><code>"webp-filter-type"</code>: Filtering type. Values: "simple", "strong". Default: "strong".
+                      <br/><code>"webp-autofilter"</code>: Auto adjust filter strength. Values: int/unsigned int 0 or 1. Default: 0.
+                      <br/><code>"webp-alpha-compression"</code>: Alpha plane compression. Values: int/unsigned int 0 (none) or 1 (compressed). Default: 1.
+                      <br/><code>"webp-alpha-filtering"</code>: Alpha predictive filtering. Values: "none", "fast", "best". Default: "fast".
+                      <br/><code>"webp-alpha-quality"</code>: Alpha quality. Values: int/unsigned int 0-100 (0=smallest, 100=lossless). Default: 100.
+                      <br/><code>"webp-pass"</code>: Number of entropy analysis passes. Values: int/unsigned int 1-10. Default: 1.
+                      <br/><code>"webp-preprocessing"</code>: Preprocessing filter. Values: "none", "segment-smooth", "pseudo-random-dithering". Default: "none".
+                      <br/><code>"webp-partitions"</code>: log2(number of token partitions). Values: int/unsigned int 0-3. Default: 0.
+                      <br/><code>"webp-partition-limit"</code>: Quality degradation for 512k limit. Values: int/unsigned int 0-100 (0=none, 100=max). Default: 0.
+                      <br/><code>"webp-emulate-jpeg-size"</code>: Remap parameters to match JPEG size. Values: int/unsigned int 0 or 1. Default: 0.
+                      <br/><code>"webp-thread-level"</code>: Use multi-threaded encoding. Values: int/unsigned int 0 or 1. Default: 0.
+                      <br/><code>"webp-low-memory"</code>: Reduce memory usage. Values: int/unsigned int 0 or 1. Default: 0.
+                      <br/><code>"webp-near-lossless"</code>: Near lossless encoding. Values: int/unsigned int 0-100 (0=max loss, 100=off). Default: 100.
+                      <br/><code>"webp-exact"</code>: Preserve exact RGB under transparent areas. Values: int/unsigned int 0 or 1. Default: 0.
+                      <br/><code>"webp-use-delta-palette"</code>: Use delta palette. Values: int/unsigned int 0 or 1. Default: 0.
+                      <br/><code>"webp-use-sharp-yuv"</code>: Use sharp RGB→YUV conversion. Values: int/unsigned int 0 or 1. Default: 0.
                     </td>
                   </tr>
                   <tr>
