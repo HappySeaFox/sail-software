@@ -43,6 +43,7 @@
                       <b>Special properties<sup><a href="#star-special-properties">[4]</a></sup>:</b>
                       <br/><code>"apng-frames"</code>: Number of frames in the animation. Possible values: unsigned int.
                       <br/><code>"apng-plays"</code>: Number of plays of the animation. Possible values: unsigned int.
+                      <br/><code>"apng-first-frame-hidden"</code>: Whether the first frame is hidden. Possible values: bool.
                     </td>
                   </tr>
                   <tr>
@@ -51,7 +52,25 @@
                   </tr>
                   <tr>
                     <td class="fw-bold">Can&nbsp;Save</td>
-                    <td>Unsupported</td>
+                    <td><b>Grayscale:</b> 1-bit, 2-bit, 4-bit, 8-bit, 16-bit.
+                      <b>Grayscale+Alpha:</b> 16-bit, 32-bit.
+                      <b>Indexed:</b> 1-bit, 2-bit, 4-bit, 8-bit.
+                      <b>RGB:</b> 24-bit, 48-bit.
+                      <b>BGR:</b> 24-bit, 48-bit.
+                      <b>RGBA:</b> 32-bit, 64-bit.
+                      <b>BGRA:</b> 32-bit, 64-bit.
+                      <b>ARGB:</b> 32-bit, 64-bit.
+                      <b>ABGR:</b> 32-bit, 64-bit.
+                      <br/><br/>
+                      <b>Compressions:</b> DEFLATE.
+                      <br/><br/>
+                      <b>Content:</b> Static, Animated, Meta data, ICC profiles.
+                      <br/><br/>
+                      <b>Tuning<sup><a href="#star-tuning">[3]</a></sup>:</b>
+                      <br/><code>"png-filter"</code>: PNG filter methods (comma-separated). Possible values: none, sub, up, avg, paeth.
+                      <br/><code>"apng-frames"</code>: Number of frames to write in animation. Possible values: unsigned int (>1 enables APNG mode).
+                      <br/><code>"apng-plays"</code>: Number of animation loops (0 = infinite). Possible values: unsigned int (default: 0).
+                    </td>
                   </tr>
                   <tr>
                     <td class="fw-bold">Cannot&nbsp;Save</td>
