@@ -121,6 +121,24 @@ std::cout
                 </div>
               </div>
             </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingJuniorPython">
+                <button class="accordion-button collapsed shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#collapseJuniorPython" aria-expanded="false" aria-controls="collapseJuniorPython">
+                  Python
+                </button>
+              </h2>
+              <div id="collapseJuniorPython" class="accordion-collapse collapse" aria-labelledby="headingJuniorPython" data-bs-parent="#accordionJuniorExamples">
+                <div class="accordion-body">
+                  <pre><code class="language-python p-0">import sailpy
+
+image = sailpy.Image.from_file(path)
+
+print(f"Size: {image.width}x{image.height}, "
+      f"bytes per line: {image.bytes_per_line}, "
+      f"pixel format: {image.pixel_format.name}")</code></pre>
+                </div>
+              </div>
+            </div>
           </div>
 
           <div class="accordion pb-3 pb-md-4" id="accordionAdvancedExamples">
@@ -188,6 +206,27 @@ for (sail::image image = image_input.next_frame();
                 </div>
               </div>
             </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingAdvancedPython">
+                <button class="accordion-button collapsed shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#collapseAdvancedPython" aria-expanded="false" aria-controls="collapseAdvancedPython">
+                  Python
+                </button>
+              </h2>
+              <div id="collapseAdvancedPython" class="accordion-collapse collapse" aria-labelledby="headingAdvancedPython" data-bs-parent="#accordionAdvancedExamples">
+                <div class="accordion-body">
+                  <pre><code class="language-python p-0">import sailpy
+
+reader = sailpy.ImageReader(path)
+
+for frame_num, image in enumerate(reader):
+    print(f"Frame #{frame_num}, "
+          f"size: {image.width}x{image.height}, "
+          f"bytes per line: {image.bytes_per_line}, "
+          f"pixel format: {image.pixel_format.name}")
+</code></pre>
+                </div>
+              </div>
+            </div>
           </div>
           See also: <a href="/faq.html#describe-the-high-level-apis">FAQ</a>.
         </div>
@@ -229,6 +268,20 @@ for (sail::image image = image_input.next_frame();
                   <li>VCPKG
                     <p><pre><code class="language-bash p-0">vcpkg install sail</code></pre></p>
                   </li>
+                  <li>PyPI (Python bindings)
+                    <p class="mb-0">
+                      <a href="https://pypi.org/project/sailpy/">
+                        <button type="button" class="btn btn-success btn-sm my-3" style="background-color: #006dad; border-color: #006dad;">PyPI Package</button>
+                      </a>
+                    </p>
+                    <p><pre><code class="language-bash p-0">pip install sailpy
+
+# View documentation
+python -m sailpy --readme
+
+# Run image viewer example
+python -m sailpy.examples.12_image_viewer</code></pre></p>
+                  </li>
                   <li>Building from source
                     <p class="mb-0">
                       <a href="/building.html">
@@ -262,6 +315,20 @@ for (sail::image image = image_input.next_frame();
                   <li>HomeBrew
                     <p><pre><code class="language-bash p-0">brew install libsail</code></pre></p>
                   </li>
+                  <li>PyPI (Python bindings)
+                    <p class="mb-0">
+                      <a href="https://pypi.org/project/sailpy/">
+                        <button type="button" class="btn btn-success btn-sm my-3" style="background-color: #006dad; border-color: #006dad;">PyPI Package</button>
+                      </a>
+                    </p>
+                    <p><pre><code class="language-bash p-0">pip install sailpy
+
+# View documentation
+python -m sailpy --readme
+
+# Run image viewer example
+python -m sailpy.examples.12_image_viewer</code></pre></p>
+                  </li>
                   <li>Building from source
                     <p class="mb-0">
                       <a href="/building.html">
@@ -294,6 +361,20 @@ for (sail::image image = image_input.next_frame();
                   </li>
                   <li>VCPKG
                     <p><pre><code class="language-bash p-0">vcpkg install sail</code></pre></p>
+                  </li>
+                  <li>PyPI (Python bindings)
+                    <p class="mb-0">
+                      <a href="https://pypi.org/project/sailpy/">
+                        <button type="button" class="btn btn-success btn-sm my-3" style="background-color: #006dad; border-color: #006dad;">PyPI Package</button>
+                      </a>
+                    </p>
+                    <p><pre><code class="language-bash p-0">pip install sailpy
+
+# View documentation
+python -m sailpy --readme
+
+# Run image viewer example
+python -m sailpy.examples.12_image_viewer</code></pre></p>
                   </li>
                   <li>Building from source
                     <p class="mb-0">
