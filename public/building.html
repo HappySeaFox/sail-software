@@ -84,13 +84,13 @@ cmake --build . --config Release --target install</code></pre>
             <li>CMake 3.18 or later</li>
             <li>GCC and G++ 7.5 or later</li>
             <li>Standard C/C++ development files (usually installed by metapackages like <code>build-essential</code>)</li>
-            <li>Codec-specific development libraries. See <code>debian/control</code> for the complete list</li>
+            <li>Codec-specific development libraries. See <code>.github/workflows/build-and-test.yml</code> for the complete list</li>
           </ul>
           <h6 class="fw-bold">Build steps</h6>
           <pre><code class="language-bash">git clone --recursive https://github.com/HappySeaFox/sail.git
 cd sail
 
-# Install the required dependencies from debian/control
+# Install the required dependencies from .github/workflows/build-and-test.yml
 sudo apt install ...
 
 # Compile SAIL
