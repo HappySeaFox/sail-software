@@ -32,6 +32,7 @@
           <li><a href="#does-sail-provide-simple-single-line-apis">Does SAIL provide simple single-line APIs?</a></li>
           <li><a href="#in-what-pixel-format-sail-loading-functions-output-images">In what pixel format SAIL loading functions output images?</a></li>
           <li><a href="#what-pixel-formats-can-sail-save">What pixel formats can SAIL save?</a></li>
+          <li><a href="#why-does-a-codec-support-more-pixel-formats-for-writing-than-sail-convert-can-convert-to">Why does a codec support more pixel formats for writing than sail_convert can convert to?</a></li>
           <li><a href="#does-sail-support-animated-and-multi-paged-images">Does SAIL support animated and multi-paged images?</a></li>
           <li><a href="#does-sail-support-loading-from-memory">Does SAIL support loading from memory?</a></li>
           <li><a href="#how-does-sail-support-image-formats">How does SAIL support image formats?</a></li>
@@ -135,6 +136,44 @@
           <p>The list of pixel formats that can be written by SAIL is codec-specific and is publicly available in every
              .codec.info file. It can be accessed through <code>sail_codec_info_from_extension() -> codec_info -> save_features ->
              pixel_formats</code>.</p>
+        </div>
+
+        <a name="why-does-a-codec-support-more-pixel-formats-for-writing-than-sail-convert-can-convert-to"></a>
+        <div>
+          <h5 class="fw-bold">Why does a codec support more pixel formats for writing than sail_convert can convert to?</h5>
+          <p>SAIL codecs intentionally support more pixel formats for writing than <code>sail_convert()</code> can convert to.
+             This design allows you to write images with pixel formats that come from other sources (like other image
+             files, cameras, or custom renderers) without losing the original pixel format.</p>
+          <p>For example, a codec might support writing 32-bit float grayscale images. You can load such an image
+             from one file and save it to another file preserving the pixel format. However, <code>sail_convert()</code> might
+             not support converting from RGB to this specific format because such conversions are rare and complex.</p>
+          <pre>    ┌─────────────────────────────────────────────────┐
+    │  Pixel formats a codec can WRITE                │
+    │  (e.g., BPP8, BPP16, BPP24, BPP32-FLOAT, etc.)  │
+    │                                                 │
+    │   ┌──────────────────────────────────────┐      │
+    │   │ Pixel formats sail_convert()         │      │
+    │   │ can convert to                       │      │
+    │   │ (most common conversions)            │      │
+    │   │                                      │      │
+    │   │ [Common conversions like             │      │
+    │   │  RGB → BGR, RGBA → RGB, etc.]        │      │
+    │   └──────────────────────────────────────┘      │
+    │                                                 │
+    │   [Exotic formats that can be written as-is     │
+    │    but not converted to: HDR, depth maps,       │
+    │    32-bit float, uint, etc.]                    │
+    └─────────────────────────────────────────────────┘</pre>
+          <p><strong>Workflow example:</strong></p>
+          <ol>
+            <li>Load a TIFF with 32-bit float grayscale (depth map from a camera)</li>
+            <li>Save it to PNG as-is → Not supported, PNG doesn't support this format</li>
+            <li>Save it to OpenEXR as-is → Supported, written without conversion</li>
+            <li>Convert with <code>sail_convert()</code> to BPP24-RGB → No such conversion</li>
+            <li>Write your own converter for your specific use case → Then save to any format</li>
+          </ol>
+          <p>This approach provides maximum flexibility while keeping the conversion library focused on
+             the most common use cases.</p>
         </div>
 
         <a name="does-sail-support-animated-and-multi-paged-images"></a>
