@@ -214,9 +214,63 @@
           </div>
 
           <div class="accordion-item">
+            <h2 class="accordion-header" id="headingFli">
+              <button class="accordion-button shadow-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFli" aria-expanded="false" aria-controls="collapseFli">
+                4. FLI
+              </button>
+            </h2>
+            <div id="collapseFli" class="accordion-collapse collapse" aria-labelledby="headingFli" data-bs-parent="#accordionFormats">
+              <div class="accordion-body">
+                <table class="table table-striped table-bordered">
+                  <tr>
+                    <td class="fw-bold">Description</td>
+                    <td><a href="http://www.compuphase.com/flic.htm">Autodesk Animator FLIC Animation</a></td>
+                  </tr>
+                  <tr>
+                    <td class="fw-bold">Can&nbsp;Load</td>
+                    <td>
+                      <b>Indexed:</b> 8-bit.
+                      <br/><br/>
+                      <b>Compressions:</b> RLE (BRUN, LC, SS2).
+                      <br/><br/>
+                      <b>Content:</b> Static, Animated.
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="fw-bold">Cannot&nbsp;Load</td>
+                    <td>Delta compression (LC, SS2), Postage stamp chunks.</td>
+                  </tr>
+                  <tr>
+                    <td class="fw-bold">Can&nbsp;Save</td>
+                    <td>
+                      <b>Indexed:</b> 8-bit.
+                      <br/><br/>
+                      <b>Compressions:</b> RLE.
+                      <br/><br/>
+                      <b>Content:</b> Static, Animated.
+                      <br/><br/>
+                      <b>Note:</b> Both FLI (320x200) and FLC (any resolution) formats are supported.
+                      First frame uses BRUN compression, subsequent frames use COPY for simplicity.
+                      Delta compression for writing is not implemented.
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="fw-bold">Cannot&nbsp;Save</td>
+                    <td>Delta compression (LC, SS2) for writing.</td>
+                  </tr>
+                  <tr>
+                    <td class="fw-bold">Dependencies</td>
+                    <td>-</td>
+                  </tr>
+                </table>
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item">
             <h2 class="accordion-header" id="headingCur">
               <button class="accordion-button shadow-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseCur" aria-expanded="false" aria-controls="collapseCur">
-                4. CUR
+                5. CUR
               </button>
             </h2>
             <div id="collapseCur" class="accordion-collapse collapse" aria-labelledby="headingCur" data-bs-parent="#accordionFormats">
@@ -262,7 +316,7 @@
           <div class="accordion-item">
             <h2 class="accordion-header" id="headingGif">
               <button class="accordion-button shadow-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseGif" aria-expanded="false" aria-controls="collapseGif">
-                5. GIF
+                6. GIF
               </button>
             </h2>
             <div id="collapseGif" class="accordion-collapse collapse" aria-labelledby="headingGif" data-bs-parent="#accordionFormats">
@@ -315,7 +369,7 @@
           <div class="accordion-item">
             <h2 class="accordion-header" id="headingHeif">
               <button class="accordion-button shadow-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseHeif" aria-expanded="false" aria-controls="collapseHeif">
-                6. HEIF/HEIC
+                7. HEIF/HEIC
               </button>
             </h2>
             <div id="collapseHeif" class="accordion-collapse collapse" aria-labelledby="headingHeif" data-bs-parent="#accordionFormats">
@@ -391,7 +445,7 @@
           <div class="accordion-item">
             <h2 class="accordion-header" id="headingHdr">
               <button class="accordion-button shadow-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseHdr" aria-expanded="false" aria-controls="collapseHdr">
-                7. HDR
+                8. HDR
               </button>
             </h2>
             <div id="collapseHdr" class="accordion-collapse collapse" aria-labelledby="headingHdr" data-bs-parent="#accordionFormats">
@@ -455,7 +509,7 @@
           <div class="accordion-item">
             <h2 class="accordion-header" id="headingIco">
               <button class="accordion-button shadow-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseIco" aria-expanded="false" aria-controls="collapseIco">
-                8. ICO
+                9. ICO
               </button>
             </h2>
             <div id="collapseIco" class="accordion-collapse collapse" aria-labelledby="headingIco" data-bs-parent="#accordionFormats">
@@ -512,7 +566,7 @@
           <div class="accordion-item">
             <h2 class="accordion-header" id="headingJbig">
               <button class="accordion-button shadow-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseJbig" aria-expanded="false" aria-controls="collapseJbig">
-                9. JBIG
+                10. JBIG
               </button>
             </h2>
             <div id="collapseJbig" class="accordion-collapse collapse" aria-labelledby="headingJbig" data-bs-parent="#accordionFormats">
@@ -566,7 +620,7 @@
           <div class="accordion-item">
             <h2 class="accordion-header" id="headingJpeg">
               <button class="accordion-button shadow-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseJpeg" aria-expanded="false" aria-controls="collapseJpeg">
-                10. JPEG
+                11. JPEG
               </button>
             </h2>
             <div id="collapseJpeg" class="accordion-collapse collapse" aria-labelledby="headingJpeg" data-bs-parent="#accordionFormats">
@@ -636,7 +690,7 @@
           <div class="accordion-item">
             <h2 class="accordion-header" id="headingJpeg2000">
               <button class="accordion-button shadow-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseJpeg2000" aria-expanded="false" aria-controls="collapseJpeg2000">
-                11. JPEG 2000
+                12. JPEG 2000
               </button>
             </h2>
             <div id="collapseJpeg2000" class="accordion-collapse collapse" aria-labelledby="headingJpeg2000" data-bs-parent="#accordionFormats">
@@ -713,7 +767,7 @@
           <div class="accordion-item">
             <h2 class="accordion-header" id="headingJpegXl">
               <button class="accordion-button shadow-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseJpegXl" aria-expanded="false" aria-controls="collapseJpegXl">
-                12. JPEG XL
+                13. JPEG XL
               </button>
             </h2>
             <div id="collapseJpegXl" class="accordion-collapse collapse" aria-labelledby="headingJpegXl" data-bs-parent="#accordionFormats">
@@ -803,7 +857,7 @@
           <div class="accordion-item">
             <h2 class="accordion-header" id="headingPcx">
               <button class="accordion-button shadow-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapsePcx" aria-expanded="false" aria-controls="collapsePcx">
-                13. PCX
+                14. PCX
               </button>
             </h2>
             <div id="collapsePcx" class="accordion-collapse collapse" aria-labelledby="headingPcx" data-bs-parent="#accordionFormats">
@@ -857,7 +911,7 @@
           <div class="accordion-item">
             <h2 class="accordion-header" id="headingPng">
               <button class="accordion-button shadow-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapsePng" aria-expanded="false" aria-controls="collapsePng">
-                14. PNG
+                15. PNG
               </button>
             </h2>
             <div id="collapsePng" class="accordion-collapse collapse" aria-labelledby="headingPng" data-bs-parent="#accordionFormats">
@@ -913,7 +967,7 @@
           <div class="accordion-item">
             <h2 class="accordion-header" id="headingOpenexr">
               <button class="accordion-button shadow-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOpenexr" aria-expanded="false" aria-controls="collapseOpenexr">
-                15. OpenEXR
+                16. OpenEXR
               </button>
             </h2>
             <div id="collapseOpenexr" class="accordion-collapse collapse" aria-labelledby="headingOpenexr" data-bs-parent="#accordionFormats">
@@ -969,7 +1023,7 @@
           <div class="accordion-item">
             <h2 class="accordion-header" id="headingPnm">
               <button class="accordion-button shadow-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapsePnm" aria-expanded="false" aria-controls="collapsePnm">
-                16. PNM
+                17. PNM
               </button>
             </h2>
             <div id="collapsePnm" class="accordion-collapse collapse" aria-labelledby="headingPnm" data-bs-parent="#accordionFormats">
@@ -1030,7 +1084,7 @@
           <div class="accordion-item">
             <h2 class="accordion-header" id="headingPsd">
               <button class="accordion-button shadow-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapsePsd" aria-expanded="false" aria-controls="collapsePsd">
-                17. PSD
+                18. PSD
               </button>
             </h2>
             <div id="collapsePsd" class="accordion-collapse collapse" aria-labelledby="headingPsd" data-bs-parent="#accordionFormats">
@@ -1092,7 +1146,7 @@
           <div class="accordion-item">
             <h2 class="accordion-header" id="headingQoi">
               <button class="accordion-button shadow-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseQoi" aria-expanded="false" aria-controls="collapseQoi">
-                18. QOI
+                19. QOI
               </button>
             </h2>
             <div id="collapseQoi" class="accordion-collapse collapse" aria-labelledby="headingQoi" data-bs-parent="#accordionFormats">
@@ -1140,7 +1194,7 @@
           <div class="accordion-item">
             <h2 class="accordion-header" id="headingSvg">
               <button class="accordion-button shadow-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSvg" aria-expanded="false" aria-controls="collapseSvg">
-                19. SVG
+                20. SVG
               </button>
             </h2>
             <div id="collapseSvg" class="accordion-collapse collapse" aria-labelledby="headingSvg" data-bs-parent="#accordionFormats">
@@ -1188,7 +1242,7 @@
           <div class="accordion-item">
             <h2 class="accordion-header" id="headingTga">
               <button class="accordion-button shadow-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTga" aria-expanded="false" aria-controls="collapseTga">
-                20. TGA
+                21. TGA
               </button>
             </h2>
             <div id="collapseTga" class="accordion-collapse collapse" aria-labelledby="headingTga" data-bs-parent="#accordionFormats">
@@ -1248,7 +1302,7 @@
           <div class="accordion-item">
             <h2 class="accordion-header" id="headingTiff">
               <button class="accordion-button shadow-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTiff" aria-expanded="false" aria-controls="collapseTiff">
-                21. TIFF
+                22. TIFF
               </button>
             </h2>
             <div id="collapseTiff" class="accordion-collapse collapse" aria-labelledby="headingTiff" data-bs-parent="#accordionFormats">
@@ -1321,7 +1375,7 @@
           <div class="accordion-item">
             <h2 class="accordion-header" id="headingWal">
               <button class="accordion-button shadow-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseWal" aria-expanded="false" aria-controls="collapseWal">
-                22. WAL
+                23. WAL
               </button>
             </h2>
             <div id="collapseWal" class="accordion-collapse collapse" aria-labelledby="headingWal" data-bs-parent="#accordionFormats">
@@ -1363,7 +1417,7 @@
           <div class="accordion-item">
             <h2 class="accordion-header" id="headingWebp">
               <button class="accordion-button shadow-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseWebp" aria-expanded="false" aria-controls="collapseWebp">
-                23. WEBP
+                24. WEBP
               </button>
             </h2>
             <div id="collapseWebp" class="accordion-collapse collapse" aria-labelledby="headingWebp" data-bs-parent="#accordionFormats">
@@ -1443,7 +1497,7 @@
           <div class="accordion-item">
             <h2 class="accordion-header" id="headingXbm">
               <button class="accordion-button shadow-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseXbm" aria-expanded="false" aria-controls="collapseXbm">
-                24. XBM
+                25. XBM
               </button>
             </h2>
             <div id="collapseXbm" class="accordion-collapse collapse" aria-labelledby="headingXbm" data-bs-parent="#accordionFormats">
@@ -1502,7 +1556,7 @@
           <div class="accordion-item">
             <h2 class="accordion-header" id="headingXpm">
               <button class="accordion-button shadow-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseXpm" aria-expanded="false" aria-controls="collapseXpm">
-                25. XPM
+                26. XPM
               </button>
             </h2>
             <div id="collapseXpm" class="accordion-collapse collapse" aria-labelledby="headingXpm" data-bs-parent="#accordionFormats">
@@ -1558,7 +1612,7 @@
           <div class="accordion-item">
             <h2 class="accordion-header" id="headingXwd">
               <button class="accordion-button shadow-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseXwd" aria-expanded="false" aria-controls="collapseXwd">
-                26. XWD
+                27. XWD
               </button>
             </h2>
             <div id="collapseXwd" class="accordion-collapse collapse" aria-labelledby="headingXwd" data-bs-parent="#accordionFormats">
