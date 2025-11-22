@@ -217,9 +217,9 @@ for (sail::image image = image_input.next_frame();
                 <div class="accordion-body">
                   <pre><code class="language-python p-0">import sailpy
 
-reader = sailpy.ImageReader(path)
+input = sailpy.ImageInput(path)
 
-for frame_num, image in enumerate(reader):
+for frame_num, image in enumerate(input):
     print(f"Frame #{frame_num}, "
           f"size: {image.width}x{image.height}, "
           f"bytes per line: {image.bytes_per_line}, "
