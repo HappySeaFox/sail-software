@@ -1192,9 +1192,94 @@
           </div>
 
           <div class="accordion-item">
+            <h2 class="accordion-header" id="headingRaw">
+              <button class="accordion-button shadow-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseRaw" aria-expanded="false" aria-controls="collapseRaw">
+                20. RAW
+              </button>
+            </h2>
+            <div id="collapseRaw" class="accordion-collapse collapse" aria-labelledby="headingRaw" data-bs-parent="#accordionFormats">
+              <div class="accordion-body">
+                <table class="table table-striped table-bordered">
+                  <tr>
+                    <td class="fw-bold">Description</td>
+                    <td><a href="https://wikipedia.org/wiki/Raw_image_format">RAW Image Format</a></td>
+                  </tr>
+                  <tr>
+                    <td class="fw-bold">Can&nbsp;Load</td>
+                    <td>
+                      <b>Grayscale:</b> 8-bit, 16-bit.
+                      <b>RGB:</b> 24-bit, 48-bit.
+                      <b>RGBA:</b> 32-bit, 64-bit.
+                      <br/><br/>
+                      <b>Content:</b> Static, Meta data.
+                      <br/><br/>
+                      <b>Supported formats:</b> 3FR, ARW, BAY, CR2, CR3, CRW, DCR, DNG, ERF, FFF, GPR, IIQ, K25, KDC, MEF, MOS, MRW, NEF, NRW, ORF, PEF, RAF, RAW, RW2, RWL, RWZ, SR2, SRF, SRW, X3F.
+                      <br/><br/>
+                      <b>Special properties<sup><a href="#star-special-properties">[4]</a></sup>:</b>
+                      <br/><code>"raw-iso"</code>: ISO speed. Type: float.
+                      <br/><code>"raw-shutter"</code>: Shutter speed. Type: float.
+                      <br/><code>"raw-aperture"</code>: Aperture value. Type: float.
+                      <br/><code>"raw-focal-length"</code>: Focal length. Type: float.
+                      <br/><code>"raw-lens-id"</code>: Lens ID. Type: unsigned long long.
+                      <br/><code>"raw-lens"</code>: Lens name. Type: string.
+                      <br/><code>"raw-min-focal-length"</code>: Minimum focal length. Type: float.
+                      <br/><code>"raw-max-focal-length"</code>: Maximum focal length. Type: float.
+                      <br/><code>"raw-max-aperture-min-focal"</code>: Maximum aperture at minimum focal length. Type: float.
+                      <br/><code>"raw-max-aperture-max-focal"</code>: Maximum aperture at maximum focal length. Type: float.
+                      <br/><code>"raw-focal-length-in-35mm-format"</code>: Focal length in 35mm format. Type: unsigned short.
+                      <br/><code>"raw-filters"</code>: Bayer filter pattern. Type: unsigned int.
+                      <br/><code>"raw-colors"</code>: Number of color channels. Type: int.
+                      <br/><code>"raw-width"</code>: Raw image width. Type: unsigned short.
+                      <br/><code>"raw-height"</code>: Raw image height. Type: unsigned short.
+                      <br/><code>"raw-top-margin"</code>: Top margin. Type: unsigned short.
+                      <br/><code>"raw-left-margin"</code>: Left margin. Type: unsigned short.
+                      <br/><code>"raw-is-foveon"</code>: Is Foveon sensor. Type: bool.
+                      <br/><br/>
+                      <b>Tuning<sup><a href="#star-tuning">[3]</a></sup>:</b>
+                      <br/><code>"raw-brightness"</code>: Brightness adjustment. Type: float/double.
+                      <br/><code>"raw-gamma"</code>: Gamma curve. Possible values: "power", "bt709".
+                      <br/><code>"raw-highlight"</code>: Highlight mode. Type: int/unsigned int 0-9.
+                      <br/><code>"raw-output-color"</code>: Output color space. Type: string. Possible values: "srgb", "adobe-rgb", "wide-gamut-rgb", "prophoto-rgb", "xyz", "aces", "rec2020".
+                      <br/><code>"raw-output-bits-per-sample"</code>: Output bit depth. Type: int/unsigned int 8 or 16.
+                      <br/><code>"raw-demosaic"</code>: Demosaicing algorithm. Type: string. Possible values: "linear", "vng", "ppg", "ahd", "dcb", "dht", "aahd".
+                      <br/><code>"raw-four-color-rgb"</code>: Use four-color RGB interpolation. Type: bool.
+                      <br/><code>"raw-dcb-iterations"</code>: DCB iterations. Type: int/unsigned int 0-100.
+                      <br/><code>"raw-dcb-enhance-focal-length"</code>: DCB enhance focal length. Type: int/unsigned int 0-100.
+                      <br/><code>"raw-use-camera-white-balance"</code>: Use camera white balance. Type: bool.
+                      <br/><code>"raw-use-auto-white-balance"</code>: Use auto white balance. Type: bool.
+                      <br/><code>"raw-user-multiplier"</code>: User white balance multipliers. Type: string ("r g1 b g2").
+                      <br/><code>"raw-auto-brightness"</code>: Auto brightness adjustment. Type: bool.
+                      <br/><code>"raw-half-size"</code>: Output half-size image. Type: bool.
+                      <br/><code>"raw-use-fuji-rotate"</code>: Use Fuji rotation. Type: bool.
+                      <br/><code>"raw-no-interpolation"</code>: Disable interpolation. Type: bool.
+                      <br/><code>"raw-median-passes"</code>: Median filter passes. Type: int/unsigned int 0-100.
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="fw-bold">Cannot&nbsp;Load</td>
+                    <td><b>Content:</b> Multi-paged.</td>
+                  </tr>
+                  <tr>
+                    <td class="fw-bold">Can&nbsp;Save</td>
+                    <td>Unsupported</td>
+                  </tr>
+                  <tr>
+                    <td class="fw-bold">Cannot&nbsp;Save</td>
+                    <td>-</td>
+                  </tr>
+                  <tr>
+                    <td class="fw-bold">Dependencies</td>
+                    <td>libraw</td>
+                  </tr>
+                </table>
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item">
             <h2 class="accordion-header" id="headingSvg">
               <button class="accordion-button shadow-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSvg" aria-expanded="false" aria-controls="collapseSvg">
-                20. SVG
+                21. SVG
               </button>
             </h2>
             <div id="collapseSvg" class="accordion-collapse collapse" aria-labelledby="headingSvg" data-bs-parent="#accordionFormats">
@@ -1242,7 +1327,7 @@
           <div class="accordion-item">
             <h2 class="accordion-header" id="headingTga">
               <button class="accordion-button shadow-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTga" aria-expanded="false" aria-controls="collapseTga">
-                21. TGA
+                22. TGA
               </button>
             </h2>
             <div id="collapseTga" class="accordion-collapse collapse" aria-labelledby="headingTga" data-bs-parent="#accordionFormats">
@@ -1302,7 +1387,7 @@
           <div class="accordion-item">
             <h2 class="accordion-header" id="headingTiff">
               <button class="accordion-button shadow-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTiff" aria-expanded="false" aria-controls="collapseTiff">
-                22. TIFF
+                23. TIFF
               </button>
             </h2>
             <div id="collapseTiff" class="accordion-collapse collapse" aria-labelledby="headingTiff" data-bs-parent="#accordionFormats">
@@ -1375,7 +1460,7 @@
           <div class="accordion-item">
             <h2 class="accordion-header" id="headingWal">
               <button class="accordion-button shadow-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseWal" aria-expanded="false" aria-controls="collapseWal">
-                23. WAL
+                24. WAL
               </button>
             </h2>
             <div id="collapseWal" class="accordion-collapse collapse" aria-labelledby="headingWal" data-bs-parent="#accordionFormats">
@@ -1417,7 +1502,7 @@
           <div class="accordion-item">
             <h2 class="accordion-header" id="headingWebp">
               <button class="accordion-button shadow-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseWebp" aria-expanded="false" aria-controls="collapseWebp">
-                24. WEBP
+                25. WEBP
               </button>
             </h2>
             <div id="collapseWebp" class="accordion-collapse collapse" aria-labelledby="headingWebp" data-bs-parent="#accordionFormats">
@@ -1497,7 +1582,7 @@
           <div class="accordion-item">
             <h2 class="accordion-header" id="headingXbm">
               <button class="accordion-button shadow-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseXbm" aria-expanded="false" aria-controls="collapseXbm">
-                25. XBM
+                26. XBM
               </button>
             </h2>
             <div id="collapseXbm" class="accordion-collapse collapse" aria-labelledby="headingXbm" data-bs-parent="#accordionFormats">
@@ -1556,7 +1641,7 @@
           <div class="accordion-item">
             <h2 class="accordion-header" id="headingXpm">
               <button class="accordion-button shadow-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseXpm" aria-expanded="false" aria-controls="collapseXpm">
-                26. XPM
+                27. XPM
               </button>
             </h2>
             <div id="collapseXpm" class="accordion-collapse collapse" aria-labelledby="headingXpm" data-bs-parent="#accordionFormats">
@@ -1612,7 +1697,7 @@
           <div class="accordion-item">
             <h2 class="accordion-header" id="headingXwd">
               <button class="accordion-button shadow-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseXwd" aria-expanded="false" aria-controls="collapseXwd">
-                27. XWD
+                28. XWD
               </button>
             </h2>
             <div id="collapseXwd" class="accordion-collapse collapse" aria-labelledby="headingXwd" data-bs-parent="#accordionFormats">
@@ -1670,6 +1755,7 @@
               </div>
             </div>
           </div>
+
         </div>
         <div class="px-4 px-md-5 pb-4 pb-md-5 border-top">
           <h3 class="fw-bold lh-1 px-0 py-3">References</h3>
