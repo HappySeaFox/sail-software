@@ -58,21 +58,28 @@
           </ul>
           <h6 class="fw-bold">Build steps</h6>
           Open <code>Git Bash</code> (installed with Git) and execute the following commands:
-          <pre><code class="language-bash">git clone --recursive https://github.com/HappySeaFox/sail.git
+          <pre><code class="language-bash"># Install vcpkg or use your copy
+#
+git clone https://github.com/microsoft/vcpkg.git
+cd vcpkg
+./bootstrap-vcpkg.bat
+export VCPKG_ROOT="$PWD"
+cd -
+
+# Clone SAIL
+#
+git clone https://github.com/HappySeaFox/sail.git
 cd sail
 
-# Compile third-party dependencies
-cd extra
-./build
-cd ..
-
-# Compile SAIL
+# Compile SAIL against vcpkg
+#
 mkdir build
 cd build
-cmake -A x64 -DCMAKE_INSTALL_PREFIX="C:\SAIL" ..
+cmake -DCMAKE_INSTALL_PREFIX="C:/SAIL" -DCMAKE_BUILD_TYPE=Release -DCMAKE_TOOLCHAIN_FILE=$VCPKG_ROOT/scripts/buildsystems/vcpkg.cmake ..
 cmake --build . --config Release
 
 # Install
+#
 cmake --build . --config Release --target install</code></pre>
         </div>
 
