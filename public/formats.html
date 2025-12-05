@@ -1350,6 +1350,17 @@
                       <b>Content:</b> Static, Meta data.
                       <br/><br/>
                       <b>TGA Versions:</b> TGA 1.0, TGA 2.0 (with Extension Area).
+                      <br/><br/>
+                      <b>Special properties<sup><a href="#star-special-properties">[4]</a></sup>:</b>
+                      <br/><code>"tga-origin-x"</code>: X coordinate of image origin. Type: unsigned short.
+                      <br/><code>"tga-origin-y"</code>: Y coordinate of image origin. Type: unsigned short.
+                      <br/><code>"tga-alpha-bits"</code>: Number of alpha channel bits (0-15). Type: unsigned char.
+                      <br/><code>"tga-flipped-h"</code>: Image is flipped horizontally. Type: bool.
+                      <br/><code>"tga-flipped-v"</code>: Image is flipped vertically. Type: bool.
+                      <br/><code>"tga-key-color"</code>: Key color (ARGB, 32-bit). Type: unsigned int (only if not zero).
+                      <br/><code>"tga-pixel-aspect-ratio"</code>: Pixel aspect ratio. Type: double.
+                      <br/><code>"tga-scan-line-offset"</code>: Offset to scan line table. Type: unsigned int (only if not zero).
+                      <br/><code>"tga-attributes-type"</code>: Attributes type byte indicating how to interpret alpha channel (0=no alpha, 1=undefined/ignore, 2=useful non-premultiplied, 3=useful premultiplied, 4=premultiplied non-linear). Type: unsigned char.
                     </td>
                   </tr>
                   <tr>
