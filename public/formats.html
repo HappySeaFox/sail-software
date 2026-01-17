@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="utf-8">
@@ -1396,9 +1396,77 @@
           </div>
 
           <div class="accordion-item">
+            <h2 class="accordion-header" id="headingVideo">
+              <button class="accordion-button shadow-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseVideo" aria-expanded="false" aria-controls="collapseVideo">
+                23. VIDEO
+              </button>
+            </h2>
+            <div id="collapseVideo" class="accordion-collapse collapse" aria-labelledby="headingVideo" data-bs-parent="#accordionFormats">
+              <div class="accordion-body">
+                <table class="table table-striped table-bordered">
+                  <tr>
+                    <td class="fw-bold">Description</td>
+                    <td><a href="https://wikipedia.org/wiki/Video_file_format">Video File Formats</a></td>
+                  </tr>
+                  <tr>
+                    <td class="fw-bold">Can&nbsp;Load</td>
+                    <td>
+                      <b>Grayscale:</b> 8-bit, 16-bit.
+                      <b>RGB:</b> 24-bit, 48-bit.
+                      <b>RGBA:</b> 32-bit, 64-bit.
+                      <b>YUV:</b> 24-bit, 30-bit, 36-bit, 48-bit.
+                      <br/><br/>
+                      <b>Content:</b> Static, Meta data.
+                      <br/><br/>
+                      <b>Supported formats:</b> MP4, M4V, MOV, AVI, MKV, WEBM, FLV, WMV, MPG, MPEG, 3GP, OGV, TS, MTS, M2TS.
+                      <br/><br/>
+                      <b>Special properties<sup><a href="#star-special-properties">[4]</a></sup>:</b>
+                      <br/><code>"video-codec"</code>: Video codec name. Type: string.
+                      <br/><code>"video-profile"</code>: Codec profile name. Type: string.
+                      <br/><code>"video-level"</code>: Codec level. Type: string.
+                      <br/><code>"video-bitrate"</code>: Video bitrate in bits per second. Type: unsigned long.
+                      <br/><code>"video-framerate-num"</code>: Frame rate numerator. Type: int.
+                      <br/><code>"video-framerate-den"</code>: Frame rate denominator. Type: int.
+                      <br/><code>"video-width"</code>: Video width in pixels. Type: int.
+                      <br/><code>"video-height"</code>: Video height in pixels. Type: int.
+                      <br/><br/>
+                      <b>Tuning<sup><a href="#star-tuning">[3]</a></sup>:</b>
+                      <br/><code>"video-threads"</code>: Number of decoder threads. Values: int/unsigned int (default: 0 = auto).
+                      <br/><code>"video-low-resolution"</code>: Decode at lower resolution for speed. Values: bool.
+                      <br/><code>"video-skip-frame"</code>: Skip frame decoding. Values: int/unsigned int (0=none, 1=skip non-reference, 2=skip bidir, 4=skip non-keyframes, 8=skip all).
+                      <br/><code>"video-skip-idct"</code>: Skip IDCT step. Values: int/unsigned int (0=none, 1=skip B-frames, 2=skip all).
+                      <br/><code>"video-skip-loop-filter"</code>: Skip loop filtering. Values: int/unsigned int (0=none, 1=skip non-reference, 2=skip bidir, 4=skip non-keyframes, 8=skip all).
+                      <br/><code>"video-error-concealment"</code>: Error concealment strategy. Values: int/unsigned int (bitmask: 1=frame, 2=partitions, 4=drift, 8=merge).
+                      <br/><code>"video-seek-time"</code>: Extract frames at specific timestamps or time ranges (milliseconds). Values: string (semicolon-separated list of timestamps or ranges, e.g., "1000;2000;3000-5000").
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="fw-bold">Cannot&nbsp;Load</td>
+                    <td>
+                      <b>Content:</b> Animated (only first frame extracted), Audio streams, Subtitles.
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="fw-bold">Can&nbsp;Save</td>
+                    <td>Unsupported</td>
+                  </tr>
+                  <tr>
+                    <td class="fw-bold">Cannot&nbsp;Save</td>
+                    <td>-</td>
+                  </tr>
+                  <tr>
+                    <td class="fw-bold">Dependencies</td>
+                    <td>FFmpeg (libavcodec, libavformat, libavutil, libswscale)</td>
+                  </tr>
+                </table>
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item">
             <h2 class="accordion-header" id="headingTiff">
               <button class="accordion-button shadow-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTiff" aria-expanded="false" aria-controls="collapseTiff">
-                23. TIFF
+                24. TIFF
               </button>
             </h2>
             <div id="collapseTiff" class="accordion-collapse collapse" aria-labelledby="headingTiff" data-bs-parent="#accordionFormats">
@@ -1471,7 +1539,7 @@
           <div class="accordion-item">
             <h2 class="accordion-header" id="headingWal">
               <button class="accordion-button shadow-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseWal" aria-expanded="false" aria-controls="collapseWal">
-                24. WAL
+                25. WAL
               </button>
             </h2>
             <div id="collapseWal" class="accordion-collapse collapse" aria-labelledby="headingWal" data-bs-parent="#accordionFormats">
@@ -1513,7 +1581,7 @@
           <div class="accordion-item">
             <h2 class="accordion-header" id="headingWebp">
               <button class="accordion-button shadow-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseWebp" aria-expanded="false" aria-controls="collapseWebp">
-                25. WEBP
+                26. WEBP
               </button>
             </h2>
             <div id="collapseWebp" class="accordion-collapse collapse" aria-labelledby="headingWebp" data-bs-parent="#accordionFormats">
@@ -1593,7 +1661,7 @@
           <div class="accordion-item">
             <h2 class="accordion-header" id="headingXbm">
               <button class="accordion-button shadow-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseXbm" aria-expanded="false" aria-controls="collapseXbm">
-                26. XBM
+                27. XBM
               </button>
             </h2>
             <div id="collapseXbm" class="accordion-collapse collapse" aria-labelledby="headingXbm" data-bs-parent="#accordionFormats">
@@ -1652,7 +1720,7 @@
           <div class="accordion-item">
             <h2 class="accordion-header" id="headingXpm">
               <button class="accordion-button shadow-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseXpm" aria-expanded="false" aria-controls="collapseXpm">
-                27. XPM
+                28. XPM
               </button>
             </h2>
             <div id="collapseXpm" class="accordion-collapse collapse" aria-labelledby="headingXpm" data-bs-parent="#accordionFormats">
@@ -1708,7 +1776,7 @@
           <div class="accordion-item">
             <h2 class="accordion-header" id="headingXwd">
               <button class="accordion-button shadow-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseXwd" aria-expanded="false" aria-controls="collapseXwd">
-                28. XWD
+                29. XWD
               </button>
             </h2>
             <div id="collapseXwd" class="accordion-collapse collapse" aria-labelledby="headingXwd" data-bs-parent="#accordionFormats">
