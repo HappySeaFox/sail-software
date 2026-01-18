@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="utf-8">
@@ -38,7 +38,7 @@
             <li><code>SAIL_DISABLE_CODECS="a;b;c"</code> - Disable the codecs specified in this ';'-separated list. Supports individual codecs and codec groups by priority (e.g., <code>highest-priority;xbm</code>). Default: empty list.</li>
             <li><code>SAIL_ENABLE_CODECS="a;b;c"</code> - Force-enable the codecs specified in this ';'-separated list. Configuration fails if an enabled codec cannot find its dependencies. Supports individual codecs and codec groups by priority (e.g., <code>highest-priority;xbm</code>). Other codecs may be enabled or disabled based on available dependencies. When set, <code>SAIL_ONLY_CODECS</code> is ignored. Default: empty list.</li>
             <li><code>SAIL_ENABLE_OPENMP=ON|OFF</code> - Enable OpenMP support if available in the compiler. Default: <code>ON</code>.</li>
-            <li><code>SAIL_MANIP_USE_SWSCALE=ON|OFF</code> - Use libswscale (FFmpeg) for faster pixel format conversion in sail-manip. Provides SIMD-optimized conversions for RGB/BGR, RGBA variants, and YUV formats. Requires FFmpeg's libswscale library. Default: <code>OFF</code>.
+            <li><code>SAIL_MANIP_USE_SWSCALE=AUTO|ON|OFF</code> - Use libswscale (FFmpeg) for faster pixel format conversion in sail-manip. Provides SIMD-optimized conversions for RGB/BGR, RGBA variants, and YUV formats. <code>AUTO</code> (default): use if available, otherwise disable. <code>ON</code>: require libswscale. <code>OFF</code>: do not use. Default: <code>AUTO</code>.</li>
             <li><code>SAIL_ONLY_CODECS="a;b;c"</code> - Force-enable only the codecs specified in this ';'-separated list and disable all others. Configuration fails if an enabled codec cannot find its dependencies. Supports individual codecs and codec groups by priority (e.g., <code>highest-priority;xbm</code>). Default: empty list.</li>
             <li><code>SAIL_OPENMP_SCHEDULE="dynamic"</code> - OpenMP scheduling algorithm. Default: <code>dynamic</code>.</li>
             <li><code>SAIL_THIRD_PARTY_CODECS_PATH=ON|OFF</code> - Enable loading custom codecs from ';'-separated paths specified in the <code>SAIL_THIRD_PARTY_CODECS_PATH</code> environment variable. Default: <code>ON</code>.</li>
