@@ -1618,7 +1618,7 @@
                       <b>Content:</b> Static, Animated.
                       <br/><br/>
                       <b>Tuning<sup><a href="#star-tuning">[3]</a></sup>:</b>
-                      <br/><code>"webp-lossless"</code>: Lossless encoding. Values: int/unsigned int 0 (lossy) or 1 (lossless). Default: 0.
+                      <br/><code>"webp-lossless"</code>: Lossless encoding. Values: bool. Default: false.
                       <br/><code>"webp-method"</code>: Quality/speed trade-off. Values: int/unsigned int 0-6 (0=fast, 6=slower-better). Default: 4.
                       <br/><code>"webp-image-hint"</code>: Image type hint. Values: "default", "picture", "photo", "graph". Default: "default".
                       <br/><code>"webp-target-size"</code>: Target size in bytes (0=disabled). Values: int/unsigned int. Default: 0.
@@ -1628,21 +1628,21 @@
                       <br/><code>"webp-filter-strength"</code>: Filtering strength. Values: int/unsigned int 0-100 (0=off, 100=strongest). Default: 60.
                       <br/><code>"webp-filter-sharpness"</code>: Filtering sharpness. Values: int/unsigned int 0-7 (0=off, 7=least sharp). Default: 0.
                       <br/><code>"webp-filter-type"</code>: Filtering type. Values: "simple", "strong". Default: "strong".
-                      <br/><code>"webp-autofilter"</code>: Auto adjust filter strength. Values: int/unsigned int 0 or 1. Default: 0.
-                      <br/><code>"webp-alpha-compression"</code>: Alpha plane compression. Values: int/unsigned int 0 (none) or 1 (compressed). Default: 1.
+                      <br/><code>"webp-autofilter"</code>: Auto adjust filter strength. Values: bool. Default: false.
+                      <br/><code>"webp-alpha-compression"</code>: Alpha plane compression. Values: bool. Default: true.
                       <br/><code>"webp-alpha-filtering"</code>: Alpha predictive filtering. Values: "none", "fast", "best". Default: "fast".
                       <br/><code>"webp-alpha-quality"</code>: Alpha quality. Values: int/unsigned int 0-100 (0=smallest, 100=lossless). Default: 100.
                       <br/><code>"webp-pass"</code>: Number of entropy analysis passes. Values: int/unsigned int 1-10. Default: 1.
                       <br/><code>"webp-preprocessing"</code>: Preprocessing filter. Values: "none", "segment-smooth", "pseudo-random-dithering". Default: "none".
                       <br/><code>"webp-partitions"</code>: log2(number of token partitions). Values: int/unsigned int 0-3. Default: 0.
                       <br/><code>"webp-partition-limit"</code>: Quality degradation for 512k limit. Values: int/unsigned int 0-100 (0=none, 100=max). Default: 0.
-                      <br/><code>"webp-emulate-jpeg-size"</code>: Remap parameters to match JPEG size. Values: int/unsigned int 0 or 1. Default: 0.
-                      <br/><code>"webp-thread-level"</code>: Use multi-threaded encoding. Values: int/unsigned int 0 or 1. Default: 0.
-                      <br/><code>"webp-low-memory"</code>: Reduce memory usage. Values: int/unsigned int 0 or 1. Default: 0.
+                      <br/><code>"webp-emulate-jpeg-size"</code>: Remap parameters to match JPEG size. Values: bool. Default: false.
+                      <br/><code>"webp-thread-level"</code>: Use multi-threaded encoding. Values: bool. Default: false.
+                      <br/><code>"webp-low-memory"</code>: Reduce memory usage. Values: bool. Default: false.
                       <br/><code>"webp-near-lossless"</code>: Near lossless encoding. Values: int/unsigned int 0-100 (0=max loss, 100=off). Default: 100.
-                      <br/><code>"webp-exact"</code>: Preserve exact RGB under transparent areas. Values: int/unsigned int 0 or 1. Default: 0.
-                      <br/><code>"webp-use-delta-palette"</code>: Use delta palette. Values: int/unsigned int 0 or 1. Default: 0.
-                      <br/><code>"webp-use-sharp-yuv"</code>: Use sharp RGB→YUV conversion. Values: int/unsigned int 0 or 1. Default: 0.
+                      <br/><code>"webp-exact"</code>: Preserve exact RGB under transparent areas. Values: bool. Default: false.
+                      <br/><code>"webp-use-delta-palette"</code>: Use delta palette. Values: bool. Default: false.
+                      <br/><code>"webp-use-sharp-yuv"</code>: Use sharp RGB→YUV conversion. Values: bool. Default: false.
                     </td>
                   </tr>
                   <tr>
