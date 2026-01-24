@@ -235,14 +235,11 @@ for frame_num, image in enumerate(input):
         <div class="px-4 px-md-5 pb-4 pb-md-5 border-top">
           <h3 class="fw-bold lh-1 px-0 py-3">Command-line utility</h3>
           <p>SAIL comes with a powerful command-line utility <code>sail</code> for image conversion, composition, and manipulation. Convert between formats, extract frames from animations, resize images, and fine-tune codec-specific options.</p>
-          <pre><code class="language-bash p-0"># Convert with custom quality and pixel format
-sail convert input.png output.jpg -c 90 -p BPP24-RGB
+          <pre><code class="language-bash p-0"># Extract frame from video at specific timestamp and convert with PNG UP filter
+sail convert video.mp4 frame.png --load-tuning video-seek-time=5000 --save-tuning png-filter=up
 
-# Extract frame #2 from animation with PNG UP filter
-sail convert animation.gif frame2.png -n 2 --save-tuning png-filter=up
-
-# Compose multiple images into animated GIF
-sail convert frame1.png frame2.png frame3.png animation.gif -d 100</code></pre>
+# Resize image to 800x600 with Lanczos scaling
+sail resize photo.jpg 800x600 resized.jpg -m lanczos</code></pre>
         </div>
 
         <!-- Benchmarks -->

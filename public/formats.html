@@ -1437,7 +1437,7 @@
                       <br/><code>"video-skip-idct"</code>: Skip IDCT step. Values: int/unsigned int (0=none, 1=skip B-frames, 2=skip all).
                       <br/><code>"video-skip-loop-filter"</code>: Skip loop filtering. Values: int/unsigned int (0=none, 1=skip non-reference, 2=skip bidir, 4=skip non-keyframes, 8=skip all).
                       <br/><code>"video-error-concealment"</code>: Error concealment strategy. Values: int/unsigned int (bitmask: 1=frame, 2=partitions, 4=drift, 8=merge).
-                      <br/><code>"video-seek-time"</code>: Extract frames at specific timestamps or time ranges (milliseconds). Values: string (semicolon-separated list of timestamps or ranges, e.g., "1000;2000;3000-5000").
+                      <br/><code>"video-seek-time"</code>: Extract frames at specific timestamps or time ranges (milliseconds). If not specified, all frames are read sequentially (like GIF). Values: string (semicolon-separated list of timestamps or ranges, e.g., "1000;2000;3000-5000"). Format: single timestamps like "1000" or ranges like "1000-5000" (start-end in milliseconds).
                     </td>
                   </tr>
                   <tr>
