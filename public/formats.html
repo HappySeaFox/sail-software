@@ -1424,11 +1424,28 @@
                       <br/><code>"video-codec"</code>: Video codec name. Type: string.
                       <br/><code>"video-profile"</code>: Codec profile name. Type: string.
                       <br/><code>"video-level"</code>: Codec level. Type: string.
-                      <br/><code>"video-bitrate"</code>: Video bitrate in bits per second. Type: unsigned long.
-                      <br/><code>"video-framerate-num"</code>: Frame rate numerator. Type: int.
-                      <br/><code>"video-framerate-den"</code>: Frame rate denominator. Type: int.
-                      <br/><code>"video-width"</code>: Video width in pixels. Type: int.
-                      <br/><code>"video-height"</code>: Video height in pixels. Type: int.
+                      <br/><code>"video-bitrate"</code>: Video bitrate in bits per second. Type: unsigned long long.
+                      <br/><code>"video-framerate"</code>: Frame rate (constant framerate from codecpar). Type: double.
+                      <br/><code>"video-estimated-framerate"</code>: Estimated frame rate from stream. Type: double.
+                      <br/><code>"video-time-base"</code>: Time base for timestamps. Type: double.
+                      <br/><code>"video-color-space"</code>: Color space name. Type: string.
+                      <br/><code>"video-color-range"</code>: Color range name. Type: string.
+                      <br/><code>"video-color-primaries"</code>: Color primaries name. Type: string.
+                      <br/><code>"video-color-transfer"</code>: Color transfer characteristics name. Type: string.
+                      <br/><code>"video-duration"</code>: Video duration in milliseconds. Type: unsigned long long.
+                      <br/><code>"video-frames"</code>: Number of frames. Type: unsigned long long.
+                      <br/><code>"video-audio-tracks-count"</code>: Number of audio tracks. Type: unsigned int.
+                      <br/><code>"video-audio-track-{N}-codec"</code>: Audio codec name for track N (N starts from 1). Type: string.
+                      <br/><code>"video-audio-track-{N}-bitrate"</code>: Audio bitrate in bits per second for track N. Type: unsigned long long.
+                      <br/><code>"video-audio-track-{N}-sample-rate"</code>: Audio sample rate in Hz for track N. Type: int.
+                      <br/><code>"video-audio-track-{N}-channels"</code>: Number of audio channels for track N. Type: unsigned int.
+                      <br/><code>"video-audio-track-{N}-channel-layout"</code>: Channel layout description for track N. Type: string.
+                      <br/><code>"video-audio-track-{N}-stream-index"</code>: Stream index in the file for track N. Type: int.
+                      <br/><code>"video-audio-track-{N}-language"</code>: Language code for track N (if available). Type: string.
+                      <br/><code>"video-subtitle-tracks-count"</code>: Number of subtitle tracks. Type: unsigned int.
+                      <br/><code>"video-subtitle-track-{N}-codec"</code>: Subtitle codec name for track N (N starts from 1). Type: string.
+                      <br/><code>"video-subtitle-track-{N}-stream-index"</code>: Stream index in the file for track N. Type: int.
+                      <br/><code>"video-subtitle-track-{N}-language"</code>: Language code for track N (if available). Type: string.
                       <br/><br/>
                       <b>Tuning<sup><a href="#star-tuning">[3]</a></sup>:</b>
                       <br/><code>"video-threads"</code>: Number of decoder threads. Values: int/unsigned int (default: 0 = auto).
