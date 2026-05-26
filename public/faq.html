@@ -234,7 +234,6 @@
                 <li><code>SAIL_CODECS_PATH</code> environment variable</li>
                 <li>Hardcoded <code>SAIL_CODECS_PATH</code> in config.h</li>
               </ol>
-              <code>&lt;FOUND PATH&gt;/lib</code> is added to <code>LD_LIBRARY_PATH</code>.
             </p>
           </p>
           <p>On all platforms, if <code>SAIL_THIRD_PARTY_CODECS_PATH</code> is enabled in CMake (the default), the
@@ -248,9 +247,6 @@
           <p>If <code>SAIL_THIRD_PARTY_CODECS_PATH</code> is enabled in CMake (the default), set the
              <code>SAIL_THIRD_PARTY_CODECS_PATH</code> environment variable to a list of ';'-separated paths
              containing your custom SAIL codecs.</p>
-          <p>On Windows, only the <code>sail.dll</code> location and <code>SAIL_THIRD_PARTY_CODECS_PATH/lib</code> are searched
-             for codec DLL dependencies. Use the WIN32 API <code>AddDllDirectory()</code> to add custom DLL dependency search paths.
-             On other platforms, <code>SAIL_THIRD_PARTY_CODECS_PATH/lib</code> is added to <code>LD_LIBRARY_PATH</code>.</p>
           <p>If <code>SAIL_THIRD_PARTY_CODECS_PATH</code> is <code>OFF</code>, custom codec loading is disabled.</p>
         </div>
 
