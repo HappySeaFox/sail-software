@@ -236,7 +236,7 @@
               </ol>
             </p>
           </p>
-          <p>On all platforms, if <code>SAIL_THIRD_PARTY_CODECS_PATH</code> is enabled in CMake (the default), the
+          <p>On all platforms, if <code>SAIL_THIRD_PARTY_CODECS_PATH</code> is enabled in CMake (<code>OFF</code> by default), the
              <code>SAIL_THIRD_PARTY_CODECS_PATH</code> environment variable is searched for a list of ';'-separated paths
              containing third-party codecs.</p>
         </div>
@@ -244,10 +244,10 @@
         <a name="how-can-i-point-sail-to-my-custom-codecs"></a>
         <div>
           <h5 class="fw-bold">How can I point SAIL to my custom codecs?</h5>
-          <p>If <code>SAIL_THIRD_PARTY_CODECS_PATH</code> is enabled in CMake (the default), set the
+          <p>Compile SAIL with <code>-DSAIL_THIRD_PARTY_CODECS_PATH=ON</code>, then set the
              <code>SAIL_THIRD_PARTY_CODECS_PATH</code> environment variable to a list of ';'-separated paths
              containing your custom SAIL codecs.</p>
-          <p>If <code>SAIL_THIRD_PARTY_CODECS_PATH</code> is <code>OFF</code>, custom codec loading is disabled.</p>
+          <p>By default (<code>SAIL_THIRD_PARTY_CODECS_PATH=OFF</code>), custom codec loading is disabled.</p>
         </div>
 
         <a name="id-like-to-reorganize-the-standard-sail-folder-layout-on-windows-for-standalone-build-or-bundle"></a>
