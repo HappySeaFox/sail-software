@@ -284,43 +284,7 @@ sail_stop_loading(state)              &lt;-- always call this</code></pre>
           <p><span class="fw-bold">One state per source:</span> Do not reuse the same <code>state</code> for two concurrent load or save operations.</p>
           <p><span class="fw-bold">Junior API:</span> Functions like <code>sail_load_from_file()</code> call <code>sail_start_*()</code> and <code>sail_stop_*()</code>
              internally. The caller never sees <code>state</code>. They load only the first frame of multi-frame files.</p>
-          <h6 class="fw-bold">Borrowed vs owned pointers</h6>
-          <table class="table table-bordered">
-            <thead>
-              <tr>
-                <th>Pointer</th>
-                <th>Owner</th>
-                <th>Valid until</th>
-                <th>Caller must</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td><code>struct sail_image*</code> after load</td>
-                <td>Caller</td>
-                <td>Until <code>sail_destroy_image()</code></td>
-                <td>Free with <code>sail_destroy_image()</code></td>
-              </tr>
-              <tr>
-                <td><code>void* state</code> during load/save</td>
-                <td>SAIL</td>
-                <td>Until <code>sail_stop_loading()</code> / <code>sail_stop_saving()</code></td>
-                <td>Call stop. Set local pointer to NULL</td>
-              </tr>
-              <tr>
-                <td><code>const struct sail_codec_info*</code> from <code>sail_codec_info_from_*()</code></td>
-                <td>SAIL context</td>
-                <td>Until <code>sail_finish()</code></td>
-                <td>Never free. Copy strings if needed longer</td>
-              </tr>
-              <tr>
-                <td><code>struct sail_image** image</code> on error</td>
-                <td>Untouched</td>
-                <td>N/A</td>
-                <td>No cleanup if still NULL</td>
-              </tr>
-            </tbody>
-          </table>
+          <h6 class="fw-bold">Codec info lifetime</h6>
           <p><span class="fw-bold">Keeping codec info after <code>sail_finish()</code>:</span> There is no public copy API in C. Copy the fields
              you need (name, version, extensions) into your own buffers before calling <code>sail_finish()</code>.
              The C++ <code>sail::codec_info</code> class copies metadata into its own storage.</p>
