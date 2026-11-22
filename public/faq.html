@@ -35,6 +35,7 @@
           <li><a href="#why-does-a-codec-support-more-pixel-formats-for-writing-than-sail-convert-can-convert-to">Why does a codec support more pixel formats for writing than sail_convert can convert to?</a></li>
           <li><a href="#does-sail-support-animated-and-multi-paged-images">Does SAIL support animated and multi-paged images?</a></li>
           <li><a href="#does-sail-support-loading-from-memory">Does SAIL support loading from memory?</a></li>
+          <li><a href="#can-i-limit-the-maximum-image-dimensions-and-the-number-of-frames">Can I limit the maximum image dimensions and the number of frames?</a></li>
           <li><a href="#how-does-sail-support-image-formats">How does SAIL support image formats?</a></li>
           <li><a href="#does-sail-preload-codecs-in-the-initialization-routine">Does SAIL preload codecs in the initialization routine?</a></li>
           <li><a href="#how-does-sail-look-for-codecs">How does SAIL look for codecs?</a></li>
@@ -189,6 +190,72 @@
           <p>Yes. SAIL supports loading and saving from files and memory. For technical divers,
              custom I/O sources are also supported (see <code>tests/sail/custom-io.c</code>).</p>
           <p>See <code>sail_start_loading_from_file()</code>, <code>sail_start_loading_from_memory()</code>, and <code>sail_start_loading_from_io()</code>.</p>
+        </div>
+
+        <a name="can-i-limit-the-maximum-image-dimensions-and-the-number-of-frames"></a>
+        <div>
+          <h5 class="fw-bold">Can I limit the maximum image dimensions and the number of frames?</h5>
+          <p>Yes. The load options have the following limits. 0 means no limit, which is the default for all of them.</p>
+          <table class="table table-striped table-bordered">
+            <thead>
+              <tr>
+                <th>Field</th>
+                <th>Limits</th>
+                <th>Error</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code>max_width</code></td>
+                <td>Image width</td>
+                <td><code>SAIL_ERROR_IMAGE_TOO_LARGE</code></td>
+              </tr>
+              <tr>
+                <td><code>max_height</code></td>
+                <td>Image height</td>
+                <td><code>SAIL_ERROR_IMAGE_TOO_LARGE</code></td>
+              </tr>
+              <tr>
+                <td><code>max_pixels</code></td>
+                <td>Number of pixels, i.e. width * height</td>
+                <td><code>SAIL_ERROR_IMAGE_TOO_LARGE</code></td>
+              </tr>
+              <tr>
+                <td><code>max_frames</code></td>
+                <td>Number of frames loaded from an image</td>
+                <td><code>SAIL_ERROR_TOO_MANY_FRAMES</code></td>
+              </tr>
+            </tbody>
+          </table>
+          <p><code>max_width</code> and <code>max_height</code> alone don't limit the memory needed for an image: 60000x60000 RGBA pixels
+             take more than 13 GiB. Use <code>max_pixels</code> to limit the memory.</p>
+          <p>Loading or probing an image that exceeds the dimension limits fails with <code>SAIL_ERROR_IMAGE_TOO_LARGE</code>.
+             SAIL rejects such images before allocating pixels. Codecs that would otherwise allocate a lot of memory
+             or decode the whole image before that point reject them right after reading the image header.
+             For multi-frame images, the dimension limits apply to every frame.</p>
+          <p>With <code>max_frames</code>, all the allowed frames load as usual, and requesting the frame that follows
+             the last allowed one fails with <code>SAIL_ERROR_TOO_MANY_FRAMES</code>. Images with exactly <code>max_frames</code> frames
+             load fine. Probing is not affected.</p>
+          <p>For example:
+            <pre><code class="language-cpp">struct sail_load_options* load_options;
+SAIL_TRY(sail_alloc_load_options_from_features(codec_info->load_features, &amp;load_options));
+
+load_options->max_width  = 16384;
+load_options->max_height = 16384;
+load_options->max_pixels = 8192 * 8192;
+load_options->max_frames = 1000;
+
+SAIL_TRY(sail_start_loading_from_file_with_options(path, codec_info, load_options, &amp;state));</code></pre>
+          </p>
+          <p><code>SAIL_ERROR_IMAGE_TOO_LARGE</code> and <code>SAIL_ERROR_TOO_MANY_FRAMES</code> are handled like any other loading error.
+             Stop loading with <code>sail_stop_loading()</code>. Skipping a too large frame and continuing to load the next frames
+             is not supported.</p>
+          <p>In C++, use <code>sail::load_options::set_max_dimensions()</code> or <code>set_max_width()</code> and <code>set_max_height()</code>,
+             <code>set_max_pixels()</code>, and <code>set_max_frames()</code>. In Python, set the <code>LoadOptions.max_dimensions</code> property
+             or <code>LoadOptions.max_width</code> and <code>LoadOptions.max_height</code>, <code>LoadOptions.max_pixels</code>, and <code>LoadOptions.max_frames</code>.
+             Pass the options to <code>ImageInput.with_options()</code> to load images and to <code>ImageInput.probe(path, options)</code> to probe them.</p>
+          <p>The junior API like <code>sail_load_from_file()</code> uses default load options, so it doesn't limit
+             the image dimensions.</p>
         </div>
 
         <a name="how-does-sail-support-image-formats"></a>
