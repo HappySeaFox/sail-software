@@ -645,6 +645,9 @@
                       <b>YCCK:</b> 32-bit.
                       <br/><br/>
                       <b>Content:</b> Static, Meta data, ICC profiles.
+                      <br/><br/>
+                      <b>Tuning<sup><a href="#star-tuning">[3]</a></sup>:</b>
+                      <br/><code>"jpeg-dct-method"</code>: Inverse DCT method used while loading. Possible values: "slow", "fast", "float".
                     </td>
                   </tr>
                   <tr>
@@ -668,7 +671,7 @@
                       <b>Content:</b> Static, Meta data, ICC profiles.
                       <br/><br/>
                       <b>Tuning<sup><a href="#star-tuning">[3]</a></sup>:</b>
-                      <br/><code>"jpeg-dct-method"</code>: JPEG DCT method. Possible values: "slow", "fast", "float".
+                      <br/><code>"jpeg-dct-method"</code>: Forward DCT method used while saving. Possible values: "slow", "fast", "float".
                       <br/><code>"jpeg-optimize-coding"</code>: Compute optimal Huffman tables. Possible values: true or false.
                       <br/><code>"jpeg-smoothing-factor"</code>: Image smoothing (0-100). Values: int/unsigned int 0-100.
                       <br/>See the libjpeg docs for more.
